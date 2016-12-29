@@ -70,16 +70,20 @@ doctrine_mongodb:
     document_managers:
         default:
             auto_mapping: true
-
-
-
-        
+      
 fos_user:
     db_driver: mongodb
     firewall_name: main
     user_class: AppBundle\Document\User
-
-
+    service:
+        mailer: fos_user.mailer.twig_swift
+    from_email:
+        address:        herpakaap@gmail.com
+        sender_name:    Registration confirmation
+    registration:
+        confirmation:
+            enabled: true
+            template:   FOSUserBundle:Registration:email.txt.twig
     
 # Swiftmailer Configuration
 swiftmailer:
