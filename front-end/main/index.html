@@ -24,6 +24,7 @@
 
     <!-- angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -56,7 +57,7 @@
                         <li><a href="#">
                         <div id="custom-search-input">
                             <div class="input-group col-md-12">
-                                <input type="text" class="  search-query form-control" placeholder="Search for a product" />
+                                 <autocomplete ng-model="result" attr-placeholder="type to search movies..." click-activation="true" data="movies" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
                                 <span class="input-group-btn">
                                     <button class="btn btn-danger" type="button">
                                         <span class=" glyphicon glyphicon-search"></span>
