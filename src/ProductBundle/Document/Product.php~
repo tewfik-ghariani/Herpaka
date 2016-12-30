@@ -1,0 +1,16 @@
+<?php
+
+namespace ProductBundle\Document;
+
+class Product
+{
+	protected $id;
+	protected $name;
+	protected $category;
+	protected $brand;
+	protected $productMaterial;
+	protected $imageUrl;
+	protected $delivery;
+	protected $details;
+	protected $price;
+}
