@@ -1,0 +1,21 @@
+{
+  "name": "herpaka_project",
+  "authors": [
+    "Ghariani Tewfik <ghariani.tewfik@gmail.com>"
+  ],
+  "description": "Product Site",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/assets/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
