@@ -16,9 +16,16 @@ class DefaultController extends Controller
     public function createAction()
 	{
 	    
-	    $response = file_get_contents('http://vps183328.ovh.net:3000/providers/1/products');
+	    $provider1 = file_get_contents('http://vps183328.ovh.net:3000/providers/1/products');
+	    $provider2 = file_get_contents('http://vps183328.ovh.net:3000/providers/2/products');
+	    $provider3 = file_get_contents('http://vps183328.ovh.net:3000/providers/3/products');
+	    $provider4 = file_get_contents('http://vps183328.ovh.net:3000/providers/4/products');
 
-	    $array = json_decode( $response, true );
+
+	    $array = json_decode( $provider1, true );
+	    $provider2 = json_decode( $provider2, true );
+	    $provider3 = json_decode( $provider3, true );
+	    $provider4 = json_decode( $provider4, true );
 
 	    $dm = $this->get('doctrine_mongodb')->getManager();
 	     
@@ -26,7 +33,7 @@ class DefaultController extends Controller
 
 
 
-	    foreach ($array as $jsons) { 
+	    foreach ($array as $key => $jsons) { 
 
 
 		        $old = $repository -> findByProductName($jsons['productName']);
@@ -40,8 +47,11 @@ class DefaultController extends Controller
 		        $product->setImageUrl($jsons['imageUrl']);
 		        $product->setDelivery($jsons['delivery']);
 		        $product->setDetails($jsons['details']);
-		       // $product->setPrice($jsons['price']);
-		        //wait till choosing the best price
+
+		        $best_price = min($jsons['price'] , $provider2[$key]['price'] , $provider3[$key]['price'] , $provider4[$key]['price']) ;
+		        $product->setPrice($best_price);
+
+		        //ToDo update existing products 
 
 
 		        $dm->persist($product);	
@@ -57,6 +67,6 @@ class DefaultController extends Controller
 	    $dm->flush();
 	    $dm->clear();
 
-	    return new Response('Created products of provider one ');
+	    return new Response('Success!');
 	}
 }

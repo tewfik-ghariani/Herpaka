@@ -217,8 +217,9 @@ class Product
                          "Brand"=>$this->brand,
                          "ProductMaterial"=>$this->productMaterial,
                          "Image"=>$this->imageUrl,
-                         "Delivery_Time"=>$this->delivery,
-                         "Details"=>$this->details
+                         "Delivery"=>$this->delivery,
+                         "Details"=>$this->details,
+                         "Price"=>$this->price
                          );
         return $product;
 
