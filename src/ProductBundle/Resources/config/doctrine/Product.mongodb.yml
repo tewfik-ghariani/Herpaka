@@ -3,7 +3,7 @@ ProductBundle\Document\Product:
     fields:
         id:
             id:  true
-        name:
+        productName:
             type: string
         category:
             type: string

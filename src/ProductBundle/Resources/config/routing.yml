@@ -1,3 +1,9 @@
 product_homepage:
     path:     /
-    defaults: { _controller: ProductBundle:Default:index }
+    defaults: { _controller: ProductBundle:Default:create }
+
+
+product_list:
+    path:     /list
+    defaults: { _controller: ProductBundle:Product:fetch }
+

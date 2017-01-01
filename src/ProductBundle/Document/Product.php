@@ -5,7 +5,11 @@ namespace ProductBundle\Document;
 class Product
 {
 	protected $id;
-	protected $name;
+
+
+	protected $productName;
+
+
 	protected $category;
 	protected $brand;
 	protected $productMaterial;
@@ -24,27 +28,6 @@ class Product
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string $name
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
 
     /**
      * Set category
@@ -199,4 +182,48 @@ class Product
     {
         return $this->price;
     }
+
+
+    /**
+     * Set productName
+     *
+     * @param string $productName
+     * @return self
+     */
+    public function setProductName($productName)
+    {
+        $this->productName = $productName;
+        return $this;
+    }
+
+    /**
+     * Get productName
+     *
+     * @return string $productName
+     */
+    public function getProductName()
+    {
+        return $this->productName;
+    }
+
+
+    /**
+    * @return array
+    */
+    public function showProduct()
+    {
+        $product = array("ProductName"=>$this->productName,
+                         "Category"=>$this->category,
+                         "Brand"=>$this->brand,
+                         "ProductMaterial"=>$this->productMaterial,
+                         "Image"=>$this->imageUrl,
+                         "Delivery_Time"=>$this->delivery,
+                         "Details"=>$this->details
+                         );
+        return $product;
+
+    }
+
+
+
 }

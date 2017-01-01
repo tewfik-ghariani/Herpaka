@@ -22,14 +22,21 @@ class DefaultController extends Controller
 
 	    foreach ($array as $jsons) { 
 		        $product = new Product();
-		        $product->setName($jsons['productName']);
+		        $product->setProductName($jsons['productName']);
 		        $product->setCategory($jsons['category']);
 		        $product->setBrand($jsons['brand']);
 		        $product->setProductMaterial($jsons['productMaterial']);
 		        $product->setImageUrl($jsons['imageUrl']);
 		        $product->setDelivery($jsons['delivery']);
 		        $product->setDetails($jsons['details']);
-		        $product->setPrice($jsons['price']);
+		       // $product->setPrice($jsons['price']);
+		        //wait till choosing the best price
+
+
+
+
+
+
 		        $dm = $this->get('doctrine_mongodb')->getManager();
 			    $dm->persist($product);
 		}
