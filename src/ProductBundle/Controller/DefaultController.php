@@ -20,8 +20,19 @@ class DefaultController extends Controller
 
 	    $array = json_decode( $response, true );
 
+	    $dm = $this->get('doctrine_mongodb')->getManager();
+	     
+	    $repository = $dm->getRepository('ProductBundle:Product');
+
+
+
 	    foreach ($array as $jsons) { 
+
+
+		        $old = $repository -> findByProductName($jsons['productName']);
+		        if (!$old) {
 		        $product = new Product();
+
 		        $product->setProductName($jsons['productName']);
 		        $product->setCategory($jsons['category']);
 		        $product->setBrand($jsons['brand']);
@@ -33,12 +44,14 @@ class DefaultController extends Controller
 		        //wait till choosing the best price
 
 
+		        $dm->persist($product);	
+
+		        }
 
 
 
 
-		        $dm = $this->get('doctrine_mongodb')->getManager();
-			    $dm->persist($product);
+
 		}
 
 	    $dm->flush();

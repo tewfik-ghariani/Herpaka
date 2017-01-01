@@ -16,6 +16,9 @@ class ProductController extends Controller
  			$products=$dm->getRepository('ProductBundle:Product')
  					->findAll();
 
+
+
+ 			$dm->clear();
     	
           return new JsonResponse([
           	'success' => true,
