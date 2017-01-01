@@ -11,18 +11,25 @@ class ProductController extends Controller
 {
     public function fetchAction()
     {
-    	//$products = $this->get('product.get_products')->fetch();
+
     		$dm = $this->get('doctrine_mongodb')->getManager();
  			$products=$dm->getRepository('ProductBundle:Product')
  					->findAll();
 
 
 
+ 			foreach ($products as $key => $prod ) 
+ 			{
+ 				$data[$key] = $prod->showProduct();
+
+ 			}
+
+
  			$dm->clear();
     	
           return new JsonResponse([
           	'success' => true,
-          	'data' => $products[0]->showProduct()
+          	'data' => $data
           	]);
 
 

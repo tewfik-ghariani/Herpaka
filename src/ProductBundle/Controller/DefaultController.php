@@ -5,6 +5,8 @@ namespace ProductBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use ProductBundle\Document\Product;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 
 class DefaultController extends Controller
 {
@@ -22,6 +24,8 @@ class DefaultController extends Controller
 	    $provider4 = file_get_contents('http://vps183328.ovh.net:3000/providers/4/products');
 
 
+	    //ToDo Handle Errors 
+
 	    $array = json_decode( $provider1, true );
 	    $provider2 = json_decode( $provider2, true );
 	    $provider3 = json_decode( $provider3, true );
@@ -36,8 +40,15 @@ class DefaultController extends Controller
 	    foreach ($array as $key => $jsons) { 
 
 
-		        $old = $repository -> findByProductName($jsons['productName']);
-		        if (!$old) {
+		        $existing_product = $repository-> findOneByProductName($jsons['productName']);
+		        
+		        //selecting best price 
+		        $best_price = min($jsons['price'] , $provider2[$key]['price'] , $provider3[$key]['price'] , $provider4[$key]['price']) ;
+		        
+
+		        //new product
+		        if (!$existing_product) 
+		        {
 		        $product = new Product();
 
 		        $product->setProductName($jsons['productName']);
@@ -47,18 +58,24 @@ class DefaultController extends Controller
 		        $product->setImageUrl($jsons['imageUrl']);
 		        $product->setDelivery($jsons['delivery']);
 		        $product->setDetails($jsons['details']);
+			    $product->setNewPrice($best_price);
+			    $product->setOldPrice($best_price);
 
-		        $best_price = min($jsons['price'] , $provider2[$key]['price'] , $provider3[$key]['price'] , $provider4[$key]['price']) ;
-		        $product->setPrice($best_price);
-
-		        //ToDo update existing products 
-
-
-		        $dm->persist($product);	
-
-		        }
+			    $dm->persist($product);	
+		        }	
 
 
+		        //update old product
+		        else    
+		        {
+		        $existing_price = $existing_product->getNewPrice();
+		     	
+		     	   if ($existing_price != $best_price) {
+		       			 $existing_product->setOldPrice($existing_price);
+		       			 $existing_product->setNewPrice($best_price);
+		       		 }
+		        $dm->persist($existing_product);	
+				}
 
 
 
@@ -67,6 +84,9 @@ class DefaultController extends Controller
 	    $dm->flush();
 	    $dm->clear();
 
-	    return new Response('Success!');
+          return new JsonResponse([
+          	'success' => true
+          	]);
+
 	}
 }

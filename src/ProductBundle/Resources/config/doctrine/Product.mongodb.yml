@@ -17,5 +17,7 @@ ProductBundle\Document\Product:
             type: date
         details:
             type: string
-        price:
+        oldPrice:
+            type: float
+        newPrice:
             type: float

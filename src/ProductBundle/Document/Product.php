@@ -5,18 +5,15 @@ namespace ProductBundle\Document;
 class Product
 {
 	protected $id;
-
-
 	protected $productName;
-
-
 	protected $category;
 	protected $brand;
 	protected $productMaterial;
 	protected $imageUrl;
 	protected $delivery;
 	protected $details;
-	protected $price;
+	protected $oldPrice;
+    protected $newPrice;
 
     /**
      * Get id
@@ -161,28 +158,6 @@ class Product
         return $this->details;
     }
 
-    /**
-     * Set price
-     *
-     * @param float $price
-     * @return self
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
-        return $this;
-    }
-
-    /**
-     * Get price
-     *
-     * @return float $price
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
 
     /**
      * Set productName
@@ -206,6 +181,50 @@ class Product
         return $this->productName;
     }
 
+    /**
+     * Set oldPrice
+     *
+     * @param float $oldPrice
+     * @return self
+     */
+    public function setOldPrice($oldPrice)
+    {
+        $this->oldPrice = $oldPrice;
+        return $this;
+    }
+
+    /**
+     * Get oldPrice
+     *
+     * @return float $oldPrice
+     */
+    public function getOldPrice()
+    {
+        return $this->oldPrice;
+    }
+
+    /**
+     * Set newPrice
+     *
+     * @param float $newPrice
+     * @return self
+     */
+    public function setNewPrice($newPrice)
+    {
+        $this->newPrice = $newPrice;
+        return $this;
+    }
+
+    /**
+     * Get newPrice
+     *
+     * @return float $newPrice
+     */
+    public function getNewPrice()
+    {
+        return $this->newPrice;
+    }
+
 
     /**
     * @return array
@@ -219,12 +238,12 @@ class Product
                          "Image"=>$this->imageUrl,
                          "Delivery"=>$this->delivery,
                          "Details"=>$this->details,
-                         "Price"=>$this->price
+                         "Price"=>$this->newPrice,
+                         "Variation"=>$this->newPrice - $this->oldPrice
                          );
         return $product;
 
     }
-
 
 
 }
