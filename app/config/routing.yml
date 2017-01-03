@@ -1,7 +1,6 @@
-shop:
-    resource: "@ShopBundle/Controller/"
-    type:     annotation
-    prefix:   /shop
+product:
+    resource: "@ProductBundle/Resources/config/routing.yml"
+    prefix:   /product
 
 app:
     resource: "@AppBundle/Controller/"
