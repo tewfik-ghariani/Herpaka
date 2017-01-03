@@ -1,0 +1,23 @@
+ProductBundle\Document\Product:
+    repositoryClass: ProductBundle\Repository\ProductRepository
+    fields:
+        id:
+            id:  true
+        productName:
+            type: string
+        category:
+            type: string
+        brand:
+            type: string
+        productMaterial:
+            type: string
+        imageUrl:
+            type: string
+        delivery:
+            type: date
+        details:
+            type: string
+        oldPrice:
+            type: float
+        newPrice:
+            type: float
