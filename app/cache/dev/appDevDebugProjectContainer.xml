@@ -16,9 +16,9 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
-      <parameter key="ShopBundle">ShopBundle\ShopBundle</parameter>
       <parameter key="DoctrineMongoDBBundle">Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="ProductBundle">ProductBundle\ProductBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -571,7 +571,7 @@
     <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
     <parameter key="fos_user.security.login_manager.class">FOS\UserBundle\Security\LoginManager</parameter>
     <parameter key="fos_user.resetting.email.template">@FOSUser/Resetting/email.txt.twig</parameter>
-    <parameter key="fos_user.registration.confirmation.template">@FOSUser/Registration/email.txt.twig</parameter>
+    <parameter key="fos_user.registration.confirmation.template">FOSUserBundle:Registration:email.txt.twig</parameter>
     <parameter key="fos_user.storage">mongodb</parameter>
     <parameter key="fos_user.firewall_name">main</parameter>
     <parameter key="fos_user.model_manager_name">null</parameter>
@@ -583,9 +583,9 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.from_email" type="collection">
-      <parameter key="webmaster@example.com">webmaster</parameter>
+      <parameter key="herpakaap@gmail.com">Registration confirmation</parameter>
     </parameter>
-    <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
+    <parameter key="fos_user.registration.confirmation.enabled">true</parameter>
     <parameter key="fos_user.registration.form.type">FOS\UserBundle\Form\Type\RegistrationFormType</parameter>
     <parameter key="fos_user.registration.form.name">fos_user_registration_form</parameter>
     <parameter key="fos_user.registration.form.validation_groups" type="collection">
@@ -599,7 +599,7 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.resetting.email.from_email" type="collection">
-      <parameter key="webmaster@example.com">webmaster</parameter>
+      <parameter key="herpakaap@gmail.com">Registration confirmation</parameter>
     </parameter>
     <parameter key="fos_user.resetting.token_ttl">86400</parameter>
     <parameter key="fos_user.resetting.form.type">FOS\UserBundle\Form\Type\ResettingFormType</parameter>
@@ -1909,6 +1909,10 @@
         <argument>FOS\UserBundle\EventListener\FlashListener</argument>
       </call>
       <call method="addSubscriberService">
+        <argument>fos_user.listener.email_confirmation</argument>
+        <argument>FOS\UserBundle\EventListener\EmailConfirmationListener</argument>
+      </call>
+      <call method="addSubscriberService">
         <argument>fos_user.listener.resetting</argument>
         <argument>FOS\UserBundle\EventListener\ResettingListener</argument>
       </call>
@@ -1957,7 +1961,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5863df26ea0648.91665830</argument>
+            <argument>586b8d9d5c1bf2.54372282</argument>
           </service>
         </argument>
       </argument>
@@ -2246,7 +2250,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5863df26ea0648.91665830</argument>
+            <argument>586b8d9d5c1bf2.54372282</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2900,6 +2904,7 @@
       <call method="setDocumentNamespaces">
         <argument type="collection">
           <argument key="AppBundle">AppBundle\Document</argument>
+          <argument key="ProductBundle">ProductBundle\Document</argument>
         </argument>
       </call>
       <call method="setMetadataCacheImpl">
@@ -2924,6 +2929,19 @@
                 </service>
               </argument>
               <argument>AppBundle\Document</argument>
+            </call>
+            <call method="addDriver">
+              <argument type="service">
+                <service class="Doctrine\Bundle\MongoDBBundle\Mapping\Driver\YamlDriver" public="false">
+                  <argument type="collection">
+                    <argument key="/home/omanari/workspaceats/src/ProductBundle/Resources/config/doctrine">ProductBundle\Document</argument>
+                  </argument>
+                  <call method="setGlobalBasename">
+                    <argument>mapping</argument>
+                  </call>
+                </service>
+              </argument>
+              <argument>ProductBundle\Document</argument>
             </call>
             <call method="addDriver">
               <argument type="service">
@@ -3078,6 +3096,13 @@
     <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
       <tag name="form.type" alias="fos_user_registration"/>
       <argument>AppBundle\Document\User</argument>
+    </service>
+    <service id="fos_user.listener.email_confirmation" class="FOS\UserBundle\EventListener\EmailConfirmationListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="fos_user.mailer"/>
+      <argument type="service" id="fos_user.util.token_generator"/>
+      <argument type="service" id="router"/>
+      <argument type="service" id="session"/>
     </service>
     <service id="fos_user.change_password.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
@@ -3399,16 +3424,16 @@
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/home/omanari/workspaceats/src/ShopBundle/Resources/views</argument>
-        <argument>Shop</argument>
-      </call>
-      <call method="addPath">
         <argument>/home/omanari/workspaceats/vendor/doctrine/mongodb-odm-bundle/Resources/views</argument>
         <argument>DoctrineMongoDB</argument>
       </call>
       <call method="addPath">
         <argument>/home/omanari/workspaceats/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
         <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/omanari/workspaceats/src/ProductBundle/Resources/views</argument>
+        <argument>Product</argument>
       </call>
       <call method="addPath">
         <argument>/home/omanari/workspaceats/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -3515,19 +3540,21 @@
         </argument>
       </call>
     </service>
-    <service id="fos_user.mailer" class="FOS\UserBundle\Mailer\Mailer">
+    <service id="fos_user.mailer" class="FOS\UserBundle\Mailer\TwigSwiftMailer">
       <argument type="service" id="swiftmailer.mailer.default"/>
       <argument type="service" id="router"/>
-      <argument type="service" id="templating"/>
+      <argument type="service" id="twig"/>
       <argument type="collection">
-        <argument key="confirmation.template">@FOSUser/Registration/email.txt.twig</argument>
-        <argument key="resetting.template">@FOSUser/Resetting/email.txt.twig</argument>
+        <argument key="template" type="collection">
+          <argument key="confirmation">FOSUserBundle:Registration:email.txt.twig</argument>
+          <argument key="resetting">@FOSUser/Resetting/email.txt.twig</argument>
+        </argument>
         <argument key="from_email" type="collection">
           <argument key="confirmation" type="collection">
-            <argument key="webmaster@example.com">webmaster</argument>
+            <argument key="herpakaap@gmail.com">Registration confirmation</argument>
           </argument>
           <argument key="resetting" type="collection">
-            <argument key="webmaster@example.com">webmaster</argument>
+            <argument key="herpakaap@gmail.com">Registration confirmation</argument>
           </argument>
         </argument>
       </argument>
