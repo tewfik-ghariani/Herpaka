@@ -3,6 +3,10 @@ HerpakaApp.config(['$routeProvider',
 var module = angular.module('module', []) 
   
       $routeProvider.
+      when('/home', {
+        templateUrl: 'index.html',
+        controller: 'mainCtrl'
+      }).
       when('/products', {
         templateUrl: 'product/listproduct.html',
         controller: 'listproductCtrl'

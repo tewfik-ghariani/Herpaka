@@ -15,8 +15,8 @@ class __TwigTemplate_783184339cbf9e0dec3475923cf8c139cdccb0ab5c9b685096943e1040e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5306a23e552ac112670fdbbbd12b0c9adc78793b035fa40af69c28c48f0a23fe = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5306a23e552ac112670fdbbbd12b0c9adc78793b035fa40af69c28c48f0a23fe->enter($__internal_5306a23e552ac112670fdbbbd12b0c9adc78793b035fa40af69c28c48f0a23fe_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "front-end/main/index.html"));
+        $__internal_e91437c7bd7de6470d350548f89190546eae373b0881af8764e685d15e5a9c6b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e91437c7bd7de6470d350548f89190546eae373b0881af8764e685d15e5a9c6b->enter($__internal_e91437c7bd7de6470d350548f89190546eae373b0881af8764e685d15e5a9c6b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "front-end/main/index.html"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -25,7 +25,7 @@ class __TwigTemplate_783184339cbf9e0dec3475923cf8c139cdccb0ab5c9b685096943e1040e
     <meta charset=\"utf-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <title>eElectronics - HTML eCommerce Template</title>
+    <title>Herpaka application</title>
     
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
@@ -39,20 +39,74 @@ class __TwigTemplate_783184339cbf9e0dec3475923cf8c139cdccb0ab5c9b685096943e1040e
     <link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\">
     
     <!-- Custom CSS -->
-    <link rel=\"stylesheet\" href=\"../css/owl.carousel.css\">
-    <link rel=\"stylesheet\" href=\"../css/style.css\">
-    <link rel=\"stylesheet\" href=\"../css/responsive.css\">
+   
+    <link rel=\"stylesheet\" href=\"";
+        // line 22
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("global_css/owl.carousel.css"), "html", null, true);
+        echo "\">
+    <!--css true-->
+    <link rel=\"stylesheet\" href=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("global_css/style.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("main_css/style.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("global_css/responsive.css"), "html", null, true);
+        echo "\">
 
-  <link rel=\"stylesheet\" href=\"css/style.css\">
-  <link rel=\"stylesheet\" href=\"css/autocomplete.css\">
+   <!--css true-->
+  <link rel=\"stylesheet\" href=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("main_css/autocomplete.css"), "html", null, true);
+        echo "\">
 
     <!-- angular -->
-  <script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js\"></script>
+    <script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js\"></script>
     <!--added for routes -->
     <script src=\"bower_components/angular/angular.js\"></script>
     <script src=\"bower_components/angular-route/angular-route.js\"></script>
-    <script src=\"app.module.js\"></script>
-    <script src=\"app.config.js\"></script>
+    
+    <script src=\"";
+        // line 37
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("index.module.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 38
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("config.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 39
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("main.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 40
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("main_js/app.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 41
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("main_js/autocomplete.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 42
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.easing.1.3.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 43
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.sticky.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 44
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/main.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 45
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/owl.carousel.min.js"), "html", null, true);
+        echo "\"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -513,21 +567,10 @@ class __TwigTemplate_783184339cbf9e0dec3475923cf8c139cdccb0ab5c9b685096943e1040e
     <!-- Bootstrap JS form CDN -->
     <script src=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js\"></script>
     
-    <!-- jQuery sticky menu -->
-    <script src=\"js/owl.carousel.min.js\"></script>
-    <script src=\"js/jquery.sticky.js\"></script>
-
-    <!-- jQuery easing -->
-    <script src=\"js/jquery.easing.1.3.min.js\"></script>
-
-    <!-- Main Script -->
-    <script src=\"js/main.js\"></script>
-    <script type=\"text/javascript\" src=\"js/autocomplete.js\"></script>
-    <script type=\"text/javascript\" src=\"js/app.js\"></script>
   </body>
 </html>";
         
-        $__internal_5306a23e552ac112670fdbbbd12b0c9adc78793b035fa40af69c28c48f0a23fe->leave($__internal_5306a23e552ac112670fdbbbd12b0c9adc78793b035fa40af69c28c48f0a23fe_prof);
+        $__internal_e91437c7bd7de6470d350548f89190546eae373b0881af8764e685d15e5a9c6b->leave($__internal_e91437c7bd7de6470d350548f89190546eae373b0881af8764e685d15e5a9c6b_prof);
 
     }
 
@@ -536,9 +579,14 @@ class __TwigTemplate_783184339cbf9e0dec3475923cf8c139cdccb0ab5c9b685096943e1040e
         return "front-end/main/index.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  22 => 1,);
+        return array (  107 => 45,  103 => 44,  99 => 43,  95 => 42,  91 => 41,  87 => 40,  83 => 39,  79 => 38,  75 => 37,  64 => 29,  58 => 26,  54 => 25,  50 => 24,  45 => 22,  22 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -557,7 +605,7 @@ class __TwigTemplate_783184339cbf9e0dec3475923cf8c139cdccb0ab5c9b685096943e1040e
     <meta charset=\"utf-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <title>eElectronics - HTML eCommerce Template</title>
+    <title>Herpaka application</title>
     
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
@@ -571,20 +619,32 @@ class __TwigTemplate_783184339cbf9e0dec3475923cf8c139cdccb0ab5c9b685096943e1040e
     <link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\">
     
     <!-- Custom CSS -->
-    <link rel=\"stylesheet\" href=\"../css/owl.carousel.css\">
-    <link rel=\"stylesheet\" href=\"../css/style.css\">
-    <link rel=\"stylesheet\" href=\"../css/responsive.css\">
+   
+    <link rel=\"stylesheet\" href=\"{{ asset('global_css/owl.carousel.css')}}\">
+    <!--css true-->
+    <link rel=\"stylesheet\" href=\"{{ asset('global_css/style.css')}}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('main_css/style.css')}}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('global_css/responsive.css')}}\">
 
-  <link rel=\"stylesheet\" href=\"css/style.css\">
-  <link rel=\"stylesheet\" href=\"css/autocomplete.css\">
+   <!--css true-->
+  <link rel=\"stylesheet\" href=\"{{ asset('main_css/autocomplete.css')}}\">
 
     <!-- angular -->
-  <script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js\"></script>
+    <script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js\"></script>
     <!--added for routes -->
     <script src=\"bower_components/angular/angular.js\"></script>
     <script src=\"bower_components/angular-route/angular-route.js\"></script>
-    <script src=\"app.module.js\"></script>
-    <script src=\"app.config.js\"></script>
+    
+    <script src=\"{{ asset('index.module.js')}}\"></script>
+    <script src=\"{{ asset('config.js')}}\"></script>
+    <script src=\"{{ asset('main.js')}}\"></script>
+    <script src=\"{{ asset('main_js/app.js')}}\"></script>
+    <script src=\"{{ asset('main_js/autocomplete.js')}}\"></script>
+    <script src=\"{{ asset('js/jquery.easing.1.3.min.js')}}\"></script>
+    <script src=\"{{ asset('js/jquery.sticky.js')}}\"></script>
+    <script src=\"{{ asset('js/main.js')}}\"></script>
+    <script src=\"{{ asset('js/owl.carousel.min.js')}}\"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -1045,17 +1105,6 @@ class __TwigTemplate_783184339cbf9e0dec3475923cf8c139cdccb0ab5c9b685096943e1040e
     <!-- Bootstrap JS form CDN -->
     <script src=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js\"></script>
     
-    <!-- jQuery sticky menu -->
-    <script src=\"js/owl.carousel.min.js\"></script>
-    <script src=\"js/jquery.sticky.js\"></script>
-
-    <!-- jQuery easing -->
-    <script src=\"js/jquery.easing.1.3.min.js\"></script>
-
-    <!-- Main Script -->
-    <script src=\"js/main.js\"></script>
-    <script type=\"text/javascript\" src=\"js/autocomplete.js\"></script>
-    <script type=\"text/javascript\" src=\"js/app.js\"></script>
   </body>
 </html>", "front-end/main/index.html", "/home/omanari/workspaceats/app/Resources/views/front-end/main/index.html");
     }

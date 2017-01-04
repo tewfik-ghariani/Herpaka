@@ -12,7 +12,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('front-end/main/index.html');
+        return $this->render('front-end/index.html');
     }
 
     public function createAction()
