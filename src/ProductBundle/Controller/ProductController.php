@@ -21,7 +21,6 @@ class ProductController extends Controller
  			foreach ($products as $key => $prod ) 
  			{
  				$data[$key] = $prod->showProduct();
-
  			}
 
 

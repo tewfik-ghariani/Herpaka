@@ -1,0 +1,15 @@
+ProductBundle\Document\CronTask:
+    repositoryClass: ProductBundle\Repository\CronTaskRepository
+    fields:
+        id:
+            id: true
+            type: integer
+        name:
+            type: string
+        commands:
+            type: string
+        interval:
+            type: integer
+        lastrun:
+            type: datetime
+       

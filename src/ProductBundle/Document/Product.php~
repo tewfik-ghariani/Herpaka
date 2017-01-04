@@ -238,8 +238,8 @@ class Product
                          "Image"=>$this->imageUrl,
                          "Delivery"=>$this->delivery,
                          "Details"=>$this->details,
-                         "New_Price"=>$this->newPrice,
-                         "Old_Price"=>$this->oldPrice
+                         "Price"=>$this->newPrice,
+                         "Variation"=>$this->newPrice - $this->oldPrice
                          );
         return $product;
 
