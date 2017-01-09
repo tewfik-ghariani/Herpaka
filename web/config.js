@@ -1,38 +1,40 @@
-HerpakaApp.config(['$routeProvider',
+var routesModule = angular.module('routesModule', ['ngRoute']);
+
+routesModule.config(['$routeProvider',
   function($routeProvider) {
-var module = angular.module('module', []) 
+
   
       $routeProvider.
       when('/home', {
-        templateUrl: 'index.html',
+        templateUrl: Routing.generate('rou_dispacher',{template:"Prodcut:base.html"}),
         controller: 'mainCtrl'
       }).
-      when('/products', {
-        templateUrl: 'product/listproduct.html',
+      when('/show', {
+        templateUrl: Routing.generate('rou_dispacher',{template:"listproduct.html"}),
         controller: 'listproductCtrl'
       }).
       when('/products/:productId', {
-        templateUrl: 'product/singleproduct.html',
+        templateUrl: Routing.generate('rou_dispacher',{template:"singleproduct.html"}),
         controller: 'singleproductCtrl'
       }).
-      when('/user/:userId/cart', {
-        templateUrl: 'user/cart.html',
+      when('/:userId/cart', {
+        templateUrl: Routing.generate('rou_dispacher',{template:"cart.html"}),
         controller: 'cartCtrl'
       }).
-      when('/user/:userId/checkout', {
-        templateUrl: 'user/checkout.html',
+      when('/:userId/checkout', {
+        templateUrl: Routing.generate('rou_dispacher',{template:"checkout.html"}),
         controller: 'checkoutCtrl'
       }).
-      when('/user/login', {
-        templateUrl: 'user/login.html',
+      when('/login', {
+        templateUrl: Routing.generate('rou_dispacher',{template:"login.html"}),
         controller: 'loginCtrl'
       }).
-      when('/user/register', {
-        templateUrl: 'user/register.html',
+      when('/register', {
+        templateUrl: Routing.generate('rou_dispacher',{template:"register.html"}),
         controller: 'registerCtrl'
       }).
-      when('/user/:userId/update', {
-        templateUrl: 'user/register.html',
+      when('/:userId/update', {
+        templateUrl: Routing.generate('rou_dispacher',{template:"update.html"}),
         controller: 'updateCtrl'
       }).
       otherwise({

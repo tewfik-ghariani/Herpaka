@@ -89,4 +89,10 @@ class DefaultController extends Controller
           	]);
 
 	}
+
+	public function dispatchAction($template)
+        {
+            return $this->render('ProductBundle:'.$template);
+        }
+
 }

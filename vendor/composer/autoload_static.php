@@ -60,6 +60,7 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
         'F' => 
         array (
             'FOS\\UserBundle\\' => 15,
+            'FOS\\JsRoutingBundle\\' => 20,
         ),
         'D' => 
         array (
@@ -169,6 +170,10 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
         array (
             0 => __DIR__ . '/..' . '/friendsofsymfony/user-bundle',
         ),
+        'FOS\\JsRoutingBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofsymfony/jsrouting-bundle',
+        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -212,6 +217,13 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
             'SensioLabs\\Security' => 
             array (
                 0 => __DIR__ . '/..' . '/sensiolabs/security-checker',
+            ),
+        ),
+        'J' => 
+        array (
+            'JsonpCallbackValidator' => 
+            array (
+                0 => __DIR__ . '/..' . '/willdurand/jsonp-callback-validator/src',
             ),
         ),
         'D' => 
