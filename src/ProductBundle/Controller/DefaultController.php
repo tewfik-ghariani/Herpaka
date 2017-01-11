@@ -15,6 +15,12 @@ class DefaultController extends Controller
         return $this->render('front-end/index.html');
     }
 
+     public function dispatchAction($template)
+        {
+            return $this->render('ProductBundle:'.$template);
+        }
+
+
     public function createAction()
 	{
 	    
