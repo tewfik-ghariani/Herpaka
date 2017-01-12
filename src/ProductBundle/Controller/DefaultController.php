@@ -12,13 +12,8 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('front-end/index.html');
+        return $this->render('index.html');
     }
-
-     public function dispatchAction($template)
-        {
-            return $this->render('ProductBundle:'.$template);
-        }
 
 
     public function createAction()
@@ -96,9 +91,6 @@ class DefaultController extends Controller
 
 	}
 
-	public function dispatchAction($template)
-        {
-            return $this->render('ProductBundle:'.$template);
-        }
+
 
 }

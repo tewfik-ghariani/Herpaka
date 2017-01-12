@@ -111,22 +111,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // product_test
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'product_test');
-            }
-
+        if ($pathinfo === '/test') {
             return array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::indexAction',  '_route' => 'product_test',);
         }
 
         // product_list
         if ($pathinfo === '/list') {
             return array (  '_controller' => 'ProductBundle\\Controller\\ProductController::fetchAction',  '_route' => 'product_list',);
-        }
-
-        // rou_dispacher
-        if (0 === strpos($pathinfo, '/dispath') && preg_match('#^/dispath/(?P<template>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'rou_dispacher')), array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::dispatchAction',));
         }
 
         // homepage
@@ -323,11 +314,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
         }
         not_fos_user_change_password:
-
-        // fos_js_routing_js
-        if (0 === strpos($pathinfo, '/js/routing') && preg_match('#^/js/routing(?:\\.(?P<_format>js|json))?$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_js_routing_js')), array (  '_controller' => 'fos_js_routing.controller:indexAction',  '_format' => 'js',));
-        }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
