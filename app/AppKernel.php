@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new ProductBundle\ProductBundle(),
+            new JMose\CommandSchedulerBundle\JMoseCommandSchedulerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

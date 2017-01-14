@@ -19,10 +19,93 @@
       <parameter key="DoctrineMongoDBBundle">Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="ProductBundle">ProductBundle\ProductBundle</parameter>
+      <parameter key="JMoseCommandSchedulerBundle">JMose\CommandSchedulerBundle\JMoseCommandSchedulerBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
+    </parameter>
+    <parameter key="kernel.bundles_metadata" type="collection">
+      <parameter key="FrameworkBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
+      </parameter>
+      <parameter key="SecurityBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
+      </parameter>
+      <parameter key="TwigBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
+      </parameter>
+      <parameter key="MonologBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/monolog-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
+      </parameter>
+      <parameter key="SwiftmailerBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/swiftmailer-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\SwiftmailerBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/doctrine/doctrine-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
+      </parameter>
+      <parameter key="SensioFrameworkExtraBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/sensio/framework-extra-bundle</parameter>
+        <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
+      </parameter>
+      <parameter key="AppBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/src/AppBundle</parameter>
+        <parameter key="namespace">AppBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineMongoDBBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/doctrine/mongodb-odm-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\MongoDBBundle</parameter>
+      </parameter>
+      <parameter key="FOSUserBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/friendsofsymfony/user-bundle</parameter>
+        <parameter key="namespace">FOS\UserBundle</parameter>
+      </parameter>
+      <parameter key="ProductBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/src/ProductBundle</parameter>
+        <parameter key="namespace">ProductBundle</parameter>
+      </parameter>
+      <parameter key="JMoseCommandSchedulerBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/jmose/command-scheduler-bundle</parameter>
+        <parameter key="namespace">JMose\CommandSchedulerBundle</parameter>
+      </parameter>
+      <parameter key="DebugBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
+      </parameter>
+      <parameter key="WebProfilerBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
+      </parameter>
+      <parameter key="SensioDistributionBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/sensio/distribution-bundle</parameter>
+        <parameter key="namespace">Sensio\Bundle\DistributionBundle</parameter>
+      </parameter>
+      <parameter key="SensioGeneratorBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/sensio/generator-bundle</parameter>
+        <parameter key="namespace">Sensio\Bundle\GeneratorBundle</parameter>
+      </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
@@ -497,7 +580,7 @@
     <parameter key="doctrine.orm.naming_strategy.underscore.class">Doctrine\ORM\Mapping\UnderscoreNamingStrategy</parameter>
     <parameter key="doctrine.orm.quote_strategy.default.class">Doctrine\ORM\Mapping\DefaultQuoteStrategy</parameter>
     <parameter key="doctrine.orm.quote_strategy.ansi.class">Doctrine\ORM\Mapping\AnsiQuoteStrategy</parameter>
-    <parameter key="doctrine.orm.entity_listener_resolver.class">Doctrine\ORM\Mapping\DefaultEntityListenerResolver</parameter>
+    <parameter key="doctrine.orm.entity_listener_resolver.class">Doctrine\Bundle\DoctrineBundle\Mapping\ContainerAwareEntityListenerResolver</parameter>
     <parameter key="doctrine.orm.second_level_cache.default_cache_factory.class">Doctrine\ORM\Cache\DefaultCacheFactory</parameter>
     <parameter key="doctrine.orm.second_level_cache.default_region.class">Doctrine\ORM\Cache\Region\DefaultRegion</parameter>
     <parameter key="doctrine.orm.second_level_cache.filelock_region.class">Doctrine\ORM\Cache\Region\FileLockRegion</parameter>
@@ -608,6 +691,21 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="jmose_command_scheduler.log_path">false</parameter>
+    <parameter key="jmose_command_scheduler.lock_timeout">false</parameter>
+    <parameter key="jmose_command_scheduler.monitor_mail" type="collection"/>
+    <parameter key="jmose_command_scheduler.send_ok">false</parameter>
+    <parameter key="jmose_command_scheduler.excluded_command_namespaces" type="collection">
+      <parameter>_global</parameter>
+      <parameter>scheduler</parameter>
+      <parameter>server</parameter>
+      <parameter>container</parameter>
+      <parameter>config</parameter>
+      <parameter>generate</parameter>
+      <parameter>init</parameter>
+      <parameter>router</parameter>
+    </parameter>
+    <parameter key="jmose_command_scheduler.doctrine_manager">default</parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -1240,6 +1338,8 @@
               <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType">fos_user.change_password.form.type</argument>
               <argument key="fos_user_resetting">fos_user.resetting.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ResettingFormType">fos_user.resetting.form.type</argument>
+              <argument key="command_choice">jmose_command_scheduler.form.type.command_choice</argument>
+              <argument key="JMose\CommandSchedulerBundle\Form\Type\CommandChoiceType">jmose_command_scheduler.form.type.command_choice</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -1492,6 +1592,11 @@
         <argument type="collection">
           <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</argument>
           <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/friendsofsymfony/user-bundle/Resources/config/validation.xml</argument>
+        </argument>
+      </call>
+      <call method="addYamlMappings">
+        <argument type="collection">
+          <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/jmose/command-scheduler-bundle/Resources/config/validation.yml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1961,7 +2066,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>587777c1c77436.75648402</argument>
+            <argument>587aa90ce95a31.17152681</argument>
           </service>
         </argument>
       </argument>
@@ -2250,7 +2355,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>587777c1c77436.75648402</argument>
+            <argument>587aa90ce95a31.17152681</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2483,6 +2588,13 @@
       </call>
       <call method="addExtension">
         <argument type="service">
+          <service class="Twig_Extension_Debug" public="false">
+            <tag name="twig.extension"/>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
           <service class="Symfony\Bridge\Twig\Extension\FormExtension" public="false">
             <tag name="twig.extension"/>
             <argument type="service">
@@ -2497,13 +2609,6 @@
                 <argument type="service" id="security.csrf.token_manager" on-invalid="null"/>
               </service>
             </argument>
-          </service>
-        </argument>
-      </call>
-      <call method="addExtension">
-        <argument type="service">
-          <service class="Twig_Extension_Debug" public="false">
-            <tag name="twig.extension"/>
           </service>
         </argument>
       </call>
@@ -2725,7 +2830,9 @@
         <argument>sf2orm_default_1863a9f78c404ac90c4a22092b72b5c932cee76712008a1b5e30a0a022429e50</argument>
       </call>
     </service>
-    <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\ORM\Mapping\DefaultEntityListenerResolver"/>
+    <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\Bundle\DoctrineBundle\Mapping\ContainerAwareEntityListenerResolver">
+      <argument type="service" id="service_container"/>
+    </service>
     <service id="doctrine.orm.default_listeners.attach_entity_listeners" class="Doctrine\ORM\Tools\AttachEntityListenersListener">
       <tag name="doctrine.event_listener" event="loadClassMetadata"/>
     </service>
@@ -2738,7 +2845,9 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument key="JMoseCommandSchedulerBundle">JMose\CommandSchedulerBundle\Entity</argument>
+            </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
@@ -2751,7 +2860,21 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false"/>
+              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/jmose/command-scheduler-bundle/Resources/config/doctrine">JMose\CommandSchedulerBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>JMose\CommandSchedulerBundle\Entity</argument>
+                </call>
+              </service>
             </argument>
           </call>
           <call method="setProxyDir">
@@ -3135,6 +3258,23 @@
       <argument type="service" id="router"/>
       <argument>86400</argument>
     </service>
+    <service id="jmose_command_scheduler.command_parser" class="JMose\CommandSchedulerBundle\Service\CommandParser">
+      <argument type="service" id="kernel"/>
+      <argument type="collection">
+        <argument>_global</argument>
+        <argument>scheduler</argument>
+        <argument>server</argument>
+        <argument>container</argument>
+        <argument>config</argument>
+        <argument>generate</argument>
+        <argument>init</argument>
+        <argument>router</argument>
+      </argument>
+    </service>
+    <service id="jmose_command_scheduler.form.type.command_choice" class="JMose\CommandSchedulerBundle\Form\Type\CommandChoiceType">
+      <tag name="form.type" alias="command_choice"/>
+      <argument type="service" id="jmose_command_scheduler.command_parser"/>
+    </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
@@ -3264,6 +3404,9 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
+      </call>
     </service>
     <service id="monolog.logger.translation" class="Symfony\Bridge\Monolog\Logger">
       <argument>translation</argument>
@@ -3272,6 +3415,9 @@
       </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
     <service id="monolog.logger.templating" class="Symfony\Bridge\Monolog\Logger">
@@ -3282,6 +3428,9 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
+      </call>
     </service>
     <service id="monolog.logger.profiler" class="Symfony\Bridge\Monolog\Logger">
       <argument>profiler</argument>
@@ -3290,6 +3439,9 @@
       </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
     <service id="monolog.logger.router" class="Symfony\Bridge\Monolog\Logger">
@@ -3300,6 +3452,9 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
+      </call>
     </service>
     <service id="monolog.logger.php" class="Symfony\Bridge\Monolog\Logger">
       <argument>php</argument>
@@ -3308,6 +3463,9 @@
       </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
     <service id="monolog.logger.event" class="Symfony\Bridge\Monolog\Logger">
@@ -3318,6 +3476,9 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
+      </call>
     </service>
     <service id="monolog.logger.security" class="Symfony\Bridge\Monolog\Logger">
       <argument>security</argument>
@@ -3326,6 +3487,9 @@
       </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
     <service id="monolog.logger.doctrine" class="Symfony\Bridge\Monolog\Logger">
@@ -3336,6 +3500,13 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
+      </call>
+    </service>
+    <service id="monolog.handler.debug" class="Symfony\Bridge\Monolog\Handler\DebugHandler">
+      <argument>100</argument>
+      <argument>true</argument>
     </service>
     <service id="monolog.handler.null_internal" class="Monolog\Handler\NullHandler"/>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
@@ -3399,57 +3570,6 @@
       <argument type="service" id="security.encoder_factory"/>
     </service>
     <service id="security.user_checker.main" class="Symfony\Component\Security\Core\User\UserChecker"/>
-    <service id="twig.loader" class="Symfony\Bundle\TwigBundle\Loader\FilesystemLoader">
-      <tag name="twig.loader"/>
-      <argument type="service" id="templating.locator"/>
-      <argument type="service" id="templating.name_parser"/>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
-        <argument>Framework</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
-        <argument>Security</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
-        <argument>Twig</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/swiftmailer-bundle/Resources/views</argument>
-        <argument>Swiftmailer</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/doctrine/doctrine-bundle/Resources/views</argument>
-        <argument>Doctrine</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/doctrine/mongodb-odm-bundle/Resources/views</argument>
-        <argument>DoctrineMongoDB</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
-        <argument>FOSUser</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/src/ProductBundle/Resources/views</argument>
-        <argument>Product</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
-        <argument>Debug</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
-        <argument>WebProfiler</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/app/Resources/views</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
-      </call>
-    </service>
     <service id="logger" class="Symfony\Bridge\Monolog\Logger">
       <argument>app</argument>
       <call method="useMicrosecondTimestamps">
@@ -3460,6 +3580,9 @@
       </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
       </call>
       <autowiring-type>Psr\Log\LoggerInterface</autowiring-type>
     </service>
@@ -3571,6 +3694,61 @@
         </service>
       </argument>
       <argument>AppBundle\Document\User</argument>
+    </service>
+    <service id="twig.loader" class="Symfony\Bundle\TwigBundle\Loader\FilesystemLoader">
+      <tag name="twig.loader"/>
+      <argument type="service" id="templating.locator"/>
+      <argument type="service" id="templating.name_parser"/>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
+        <argument>Framework</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
+        <argument>Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
+        <argument>Twig</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/swiftmailer-bundle/Resources/views</argument>
+        <argument>Swiftmailer</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/doctrine/mongodb-odm-bundle/Resources/views</argument>
+        <argument>DoctrineMongoDB</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
+        <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/src/ProductBundle/Resources/views</argument>
+        <argument>Product</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/jmose/command-scheduler-bundle/Resources/views</argument>
+        <argument>JMoseCommandScheduler</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
+        <argument>Debug</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
+        <argument>WebProfiler</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/app/Resources/views</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/tewfik/Documents/Ensi/3éme/projet_arch/project/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
+      </call>
     </service>
     <service id="fos_user.doctrine_registry" alias="doctrine_mongodb"/>
     <service id="session.storage" alias="session.storage.native"/>

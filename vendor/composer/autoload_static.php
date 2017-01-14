@@ -53,6 +53,10 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
         array (
             'Monolog\\' => 8,
         ),
+        'J' => 
+        array (
+            'JMose\\CommandSchedulerBundle\\' => 29,
+        ),
         'I' => 
         array (
             'Incenteev\\ParameterHandler\\' => 27,
@@ -162,6 +166,10 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'JMose\\CommandSchedulerBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jmose/command-scheduler-bundle',
+        ),
         'Incenteev\\ParameterHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
@@ -259,6 +267,13 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
             'Doctrine\\Common\\Annotations\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
+            ),
+        ),
+        'C' => 
+        array (
+            'Cron' => 
+            array (
+                0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src',
             ),
         ),
     );

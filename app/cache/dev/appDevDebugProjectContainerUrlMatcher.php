@@ -105,14 +105,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // product_homepage
-        if ($pathinfo === '/create') {
-            return array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::createAction',  '_route' => 'product_homepage',);
-        }
+        // product_home_page
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'product_home_page');
+            }
 
-        // product_test
-        if ($pathinfo === '/test') {
-            return array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::indexAction',  '_route' => 'product_test',);
+            return array (  '_controller' => 'ProductBundle\\Controller\\DefaultController::indexAction',  '_route' => 'product_home_page',);
         }
 
         // product_list
@@ -314,6 +313,69 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
         }
         not_fos_user_change_password:
+
+        if (0 === strpos($pathinfo, '/command-scheduler')) {
+            // jmose_command_scheduler_list
+            if ($pathinfo === '/command-scheduler/list') {
+                return array (  '_controller' => 'JMose\\CommandSchedulerBundle\\Controller\\ListController::indexAction',  '_route' => 'jmose_command_scheduler_list',);
+            }
+
+            // jmose_command_scheduler_monitor
+            if ($pathinfo === '/command-scheduler/monitor') {
+                return array (  '_controller' => 'JMose\\CommandSchedulerBundle\\Controller\\ListController::monitorAction',  '_route' => 'jmose_command_scheduler_monitor',);
+            }
+
+            if (0 === strpos($pathinfo, '/command-scheduler/action')) {
+                // jmose_command_scheduler_action_toggle
+                if (0 === strpos($pathinfo, '/command-scheduler/action/toggle') && preg_match('#^/command\\-scheduler/action/toggle/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'jmose_command_scheduler_action_toggle')), array (  '_controller' => 'JMose\\CommandSchedulerBundle\\Controller\\ListController::toggleAction',));
+                }
+
+                // jmose_command_scheduler_action_remove
+                if (0 === strpos($pathinfo, '/command-scheduler/action/remove') && preg_match('#^/command\\-scheduler/action/remove/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'jmose_command_scheduler_action_remove')), array (  '_controller' => 'JMose\\CommandSchedulerBundle\\Controller\\ListController::removeAction',));
+                }
+
+                // jmose_command_scheduler_action_execute
+                if (0 === strpos($pathinfo, '/command-scheduler/action/execute') && preg_match('#^/command\\-scheduler/action/execute/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'jmose_command_scheduler_action_execute')), array (  '_controller' => 'JMose\\CommandSchedulerBundle\\Controller\\ListController::executeAction',));
+                }
+
+                // jmose_command_scheduler_action_unlock
+                if (0 === strpos($pathinfo, '/command-scheduler/action/unlock') && preg_match('#^/command\\-scheduler/action/unlock/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'jmose_command_scheduler_action_unlock')), array (  '_controller' => 'JMose\\CommandSchedulerBundle\\Controller\\ListController::unlockAction',));
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/command-scheduler/detail')) {
+                // jmose_command_scheduler_detail_index
+                if (rtrim($pathinfo, '/') === '/command-scheduler/detail/view') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'jmose_command_scheduler_detail_index');
+                    }
+
+                    return array (  '_controller' => 'JMose\\CommandSchedulerBundle\\Controller\\DetailController::indexAction',  '_route' => 'jmose_command_scheduler_detail_index',);
+                }
+
+                // jmose_command_scheduler_detail_edit
+                if (0 === strpos($pathinfo, '/command-scheduler/detail/edit') && preg_match('#^/command\\-scheduler/detail/edit/(?P<scheduledCommandId>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'jmose_command_scheduler_detail_edit')), array (  '_controller' => 'JMose\\CommandSchedulerBundle\\Controller\\DetailController::initEditScheduledCommandAction',));
+                }
+
+                // jmose_command_scheduler_detail_new
+                if ($pathinfo === '/command-scheduler/detail/new') {
+                    return array (  '_controller' => 'JMose\\CommandSchedulerBundle\\Controller\\DetailController::initNewScheduledCommandAction',  '_route' => 'jmose_command_scheduler_detail_new',);
+                }
+
+                // jmose_command_scheduler_detail_save
+                if ($pathinfo === '/command-scheduler/detail/save') {
+                    return array (  '_controller' => 'JMose\\CommandSchedulerBundle\\Controller\\DetailController::saveAction',  '_route' => 'jmose_command_scheduler_detail_save',);
+                }
+
+            }
+
+        }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

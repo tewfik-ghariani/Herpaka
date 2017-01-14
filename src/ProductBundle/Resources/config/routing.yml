@@ -1,9 +1,5 @@
-product_homepage:
-    path:     /create
-    defaults: { _controller: ProductBundle:Default:create }
-
-product_test:
-    path:     /test
+product_home_page:
+    path:     /
     defaults: { _controller: ProductBundle:Default:index }
 
 product_list:
