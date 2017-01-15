@@ -1,4 +1,4 @@
-var app = angular.module('app', ['autocomplete']);
+var app = angular.module('app', ['autocomplete','ngRoute']);
 
 // the service that retrieves some movie title from an url
 app.factory('MovieRetriever', function($http, $q, $timeout){
