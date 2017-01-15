@@ -10,9 +10,13 @@
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
-    
 
-
+    <!--for template register-->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>    
+    <!-- Website Font style foor template register -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        
     <!--jQuery-->
     <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>    
     <script src="{{ asset('main_js/main.js')}}"></script>
@@ -65,21 +69,259 @@
     <script src="{{ asset('front_end/user/controller-user/registerCtrl.js')}}"></script>
     <script src="{{ asset('front_end/mainCtrl.js')}}"></script>
      
+    <!-- views -->
+
+    <!--templates-->
+
+    <!--template for shop page-->
+         <script type="text/ng-template" id="listproduct.html"> 
+   
+        <!--div class="col-sm-6">
+                    <div class="shopping-item">
+                        <a href="cart.html">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End site branding area -->
+    
+   
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Shop</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <!--img src="img/product-2.jpg" alt=""-->
+
+                        </div>
+                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
+                                               
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <!--div class="product-pagination text-center">
+                        <nav-->
+                          <!--ul class="pagination" ng-repeat="product in products"-->
+                          <ul ng-repeat="product in products">
+
+                            <!--li>
+                              <a href
+                               aria-label="Previous">
+
+                                <span aria-hidden="true">&laquo;</span>
+                              </a>
+                            </li-->
+
+                            <li><a href="#">[[product.productName]]</a></li>
+                            <li><a href="#">[[product.Category]]</a></li><a href="#">[[product.Brand]]</a></li>
+                            <li><img class=thumbnail ng-src="[[product.Image]]"></a></li>
+                            <li><a href="#">[[product.ProductMaterial]]</a></li>
+                            <li><a href="#"> [[product.Delivery.date | date]]</a></li>
+                            <!--to do: details-->
+                            <li><a href="#">[[product.Details]]</a></li>
+                            <!--li><a href="#">[[product.variation]]</a></li-->
+                            <!--li>
+                              <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                              </a>
+                            </li-->
+                            <div class="product-carousel-price">
+                            <!--to do-->
+                            <!--ins>$[[product.price]]</ins> <del>[[product.price]]+ [[product.variation]]</del-->
+                            
+                            <ins>[[product.Price | currency]]</ins> 
+
+                            <p ng-class=checkVariation(product.Variation)> [[product.Variation]]</p>
+                        </div>
+                        
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="" ng-click="switchTo('/cart')">Add to cart</a>
+                        </div>
+                          </ul>
+                        <!--/nav>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
+    
+ 
+
+             
+        </script>
+
+    <!--template for categories-->
+
+    <!--template for login-->
+
+    <script type="text/ng-template" id="login.html"> 
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Welcome</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/><br/>
+    <!--the one generated by symfony-->
+     <!--form action="[[ path('localized_check_path') ]]" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="_username" value="[[ last_username ]]" />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="_password" />
+
+        <input type="hidden" name="_target_path" value="" />
+
+        <input type="submit" name="login" />
+    </form>
+
+    </script-->
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="">
+                    <br/><br/>
+                <form class="form-signin">
+                <input type="text" class="form-control" placeholder="Email" required autofocus>
+                <br/>
+                <input type="password" class="form-control" placeholder="Password" required>
+                <br/>
+                <br/>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    Sign in</button>
+                <label class="checkbox pull-left">
+                 <br/><br/>
+                    <input type="checkbox" value="remember-me">
+                    Remember me
+                </label>
+                <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                </form>
+            </div>
+            <a href="#" class="text-center new-account">Create an account </a>
+            </div>
+        </div>
+    </div>
+
+    <!--template for register-->
+    <script type="text/ng-template" id="register.html">
+
+    <div class="container">
+            <div class="row main">
+                <div class="panel-heading">
+                   <div class="panel-title text-center">
+                        <h2 class="title">Thank you for signing up</h2>
+                        <hr />
+                    </div>
+                </div> 
+                <div class="main-login main-center">
+                    <form class="form-horizontal" method="post" action="#">
+                        
+                        <div class="form-group">
+                            <label for="name" class="cols-sm-2 control-label">Your Name</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" class="cols-sm-2 control-label">Username</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="cols-sm-2 control-label">Password</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                    <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                    <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Register</a>
+                        </div>   
+
+                        <!--div class="form-group ">
+                            <button type="button" class="btn btn-primary btn-lg btn-block login-button" background-colour="#4CAF50">Register</button>
+                        </div-->
+                        <div class="login-register">
+                            <a href="index.php">Login</a>
+                         </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</script>
 
 
-     <!-- views -->
+    <!--template for cart-->
 
-    <script type="text/ng-template" id="base.html"> 
-    <b3>haha</b3> 
-     </script>
-    <script type="text/ng-template" id="listproduct.html"> 
-            [[products]]
+    <script type="text/ng-template" id="cart.html"> 
+            template of cart
     </script>
-    <script type="text/ng-template" id="login.html"> <b1>hi</b1></script>
-    <script type="text/ng-template" id="register.html"> <b3>bye</b3></script>
 
+    <!--template for checkout-->
+    <script type="text/ng-template" id="checkout.html"> 
+            template of checkout
+    </script>
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -132,9 +374,9 @@
                 </div>  
             </div>
         </div>
-    </div> <!-- End mainmenu area -->
+    </div> 
+    <!-- End mainmenu area -->
     
-
 
     <!-- Start Partial View -->
              <div  ng-view class="slider-area">
@@ -142,10 +384,64 @@
     <!-- End Partial View -->
 
 
-
-
-
-
+    <div class="footer-top-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-about-us">
+                        <h2><span>Herpaka app</span></h2>
+                        <p>we're the best, we're awesome, we'll rock the ATS project.
+                        oh lalalalalalalalalalalalalalalalalalalalalalala</p>
+                        <div class="footer-social">
+                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">User Navigation </h2>
+                        <ul>
+                            <li><a href="">My account</a></li>
+                            <li><a href="">Order history</a></li>
+                            <li><a href="">Wishlist</a></li>
+                            <li><a href="">Vendor contact</a></li>
+                            <li><a href="">Front page</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Categories</h2>
+                        <ul>
+                            <li><a href="">Mobile Phone</a></li>
+                            <li><a href="">Home accesseries</a></li>
+                            <li><a href="">LED TV</a></li>
+                            <li><a href="">Computer</a></li>
+                            <li><a href="">Gadets</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Newsletter</h2>
+                        <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Type your email">
+                            <input type="submit" value="Subscribe">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <div class="footer-bottom-area">
         <div class="container">
