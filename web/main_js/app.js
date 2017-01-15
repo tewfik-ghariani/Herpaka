@@ -1,4 +1,6 @@
-var app = angular.module('app', ['autocomplete','ngRoute']);
+var app = angular.module('app', ['autocomplete','ngRoute']).config(function($interpolateProvider){
+    $interpolateProvider.startSymbol('[[').endSymbol(']]');
+});
 
 // the service that retrieves some movie title from an url
 app.factory('MovieRetriever', function($http, $q, $timeout){
@@ -26,6 +28,21 @@ app.factory('MovieRetriever', function($http, $q, $timeout){
 
   return MovieRetriever;
 });
+
+
+
+
+app.controller('NavigationController', ['$scope', '$location',  function ($scope, $location) {
+
+$scope.switchTo = function(headed) {
+
+return $location.path(headed)
+
+};
+
+
+}]);
+
 
 app.controller('MyCtrl', function($scope, MovieRetriever){
 

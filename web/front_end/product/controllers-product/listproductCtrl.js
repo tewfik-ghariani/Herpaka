@@ -1,10 +1,12 @@
-var productControllers = angular.module('productControllers', []);
+var app = angular.module('app');
 
-phonecatControllers.controller('listProductCtrl', ['$scope', '$http', 
-  function ($scope, $http) {
-    $http.get('products/procuts.json').success(function(data) {
+app.controller('listproductCtrl', ['$scope','$location', '$http', 
+  function ($scope, $location, $http) {
+  	/**url = $location.path('/list');
+
+    $http.get(url).then(function(data) {
       $scope.products = data;
     });
-
-    //$scope.orderProp = 'age';
+**/
+   
   }]);

@@ -31,7 +31,7 @@
     <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/font-awesome/css/font-awesome.min.css')}}">
     
     <!-- Custom CSS -->
 
@@ -52,6 +52,28 @@
     <script src="{{ asset('main_js/autocomplete.js')}}"></script>
 
 
+    <!-- Controllers -->
+    <script src="{{ asset('front_end/product/controllers-product/listproductCtrl.js')}}"></script>
+    <script src="{{ asset('front_end/product/controllers-product/singleproductCtrl.js')}}"></script>
+    
+    <script src="{{ asset('front_end/user/controller-user/loginCtrl.js')}}"></script>
+    <script src="{{ asset('front_end/user/controller-user/registerCtrl.js')}}"></script>
+    <script src="{{ asset('front_end/mainCtrl.js')}}"></script>
+     
+
+
+
+
+     <!-- views -->
+
+    <script type="text/ng-template" id="base.html"> 
+    <b3>haha</b3> 
+     </script>
+    <script type="text/ng-template" id="listproduct.html"> 
+
+    </script>
+    <script type="text/ng-template" id="login.html"> <b1>hi</b1></script>
+    <script type="text/ng-template" id="register.html"> <b3>bye</b3></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -73,19 +95,22 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div> 
-                <div class="collapse navbar-collapse">
-                    
+                <div class="collapse navbar-collapse" >
+                        <span ng-controller="NavigationController"  >    
+
                      <ul class="nav navbar-nav navbar-right">
-                        <li><a href="">Log in </a></li>
-                        <li><a href=""> Register </a></li>
+                        <li><a href="" ng-click="switchTo('/login')"> Log in </a></li>
+                        <li><a href="" ng-click="switchTo('/register')"> Register </a></li>
                         </ul>
-                    
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="">Home</a></li>
-                                       <li><a href="">Shop page</a></li>
+                    <ul class="nav navbar-nav" >
+                                       <li><a href="" ng-click="switchTo('/home')">Home</a></li>
+                                       <li><a href="" ng-click="switchTo('/show')">Shop page</a></li>
                                        <li><a href="">Categories</a></li>
                             <div id="custom-search-input">
                             <div class="input-group col-md-12">
+
+</span>
+
                             <div ng-controller="MyCtrl" style="color: black !important">
       <autocomplete ng-model="result" attr-placeholder="type to search movies..." click-activation="true" data="movies" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
             </div>
@@ -123,7 +148,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright">
-                        <p>&copy; HerpakaApp. All Rights Reserved. Coded with <i class="fa fa-heart"></i> by <a href="http://wpexpand.com" target="_blank">Herpaka</a></p>
+                        <p>&copy; HerpakaApp. All Rights Reserved. Coded with <i class="fa fa-heart"></i> by <a href="http://www.google.com" target="_blank">Herpaka</a></p>
                     </div>
                 </div>
                 
