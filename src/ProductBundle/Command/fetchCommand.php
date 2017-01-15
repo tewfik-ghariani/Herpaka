@@ -2,11 +2,12 @@
 
     namespace ProductBundle\Command;
 
-    use Symfony\Component\Console\Command\Command;
+    use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 	use Symfony\Component\Console\Input\InputInterface;
 	use Symfony\Component\Console\Output\OutputInterface;
 
-	class fetchCommand extends Command
+
+	class fetchCommand extends ContainerAwareCommand
 
 
 
@@ -43,7 +44,8 @@
 	    $provider3 = json_decode( $provider3, true );
 	    $provider4 = json_decode( $provider4, true );
 
-	    $dm = $this->$getContainer->get('doctrine_mongodb')->getManager();
+
+	    $dm = $this->getContainer()->get('doctrine_mongodb')->getManager();
 	     
 	    $repository = $dm->getRepository('ProductBundle:Product');
 
@@ -96,9 +98,9 @@
 	    $dm->flush();
 	    $dm->clear();
 
-          return new JsonResponse([
-          	'success' => true
-          	]);
+	                $output->writeln('DataBase Updated!');
+             return 0;
+
 
 	}
 

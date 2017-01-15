@@ -53,10 +53,6 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
         array (
             'Monolog\\' => 8,
         ),
-        'J' => 
-        array (
-            'JMose\\CommandSchedulerBundle\\' => 29,
-        ),
         'I' => 
         array (
             'Incenteev\\ParameterHandler\\' => 27,
@@ -64,7 +60,6 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
         'F' => 
         array (
             'FOS\\UserBundle\\' => 15,
-            'FOS\\JsRoutingBundle\\' => 20,
         ),
         'D' => 
         array (
@@ -166,10 +161,6 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'JMose\\CommandSchedulerBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/jmose/command-scheduler-bundle',
-        ),
         'Incenteev\\ParameterHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
@@ -177,10 +168,6 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
         'FOS\\UserBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/friendsofsymfony/user-bundle',
-        ),
-        'FOS\\JsRoutingBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/friendsofsymfony/jsrouting-bundle',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -227,13 +214,6 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
                 0 => __DIR__ . '/..' . '/sensiolabs/security-checker',
             ),
         ),
-        'J' => 
-        array (
-            'JsonpCallbackValidator' => 
-            array (
-                0 => __DIR__ . '/..' . '/willdurand/jsonp-callback-validator/src',
-            ),
-        ),
         'D' => 
         array (
             'Doctrine\\ORM\\' => 
@@ -267,13 +247,6 @@ class ComposerStaticInit93d713300f0b91002822a878886183c4
             'Doctrine\\Common\\Annotations\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
-            ),
-        ),
-        'C' => 
-        array (
-            'Cron' => 
-            array (
-                0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src',
             ),
         ),
     );
