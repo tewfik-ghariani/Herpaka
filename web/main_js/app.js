@@ -32,9 +32,9 @@ app.factory('MovieRetriever', function($http, $q, $timeout){
 
 
 
-app.controller('NavigationController', ['$scope', '$location',  function ($scope, $location) {
+app.run(['$rootScope', '$location',  function ($rootScope, $location) {
 
-$scope.switchTo = function(headed) {
+$rootScope.switchTo = function(headed) {
 
 return $location.path(headed)
 
