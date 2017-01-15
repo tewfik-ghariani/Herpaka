@@ -7,7 +7,7 @@ ProductBundle\Document\CronTask:
         name:
             type: string
         commands:
-            type: hash
+            type: string
         interval:
             type: integer
         lastrun:

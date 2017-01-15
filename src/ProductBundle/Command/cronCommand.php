@@ -39,7 +39,7 @@ class cronCommand extends ContainerAwareCommand
             $run = (time() >= $nextrun);
 
             if ($run) {
-                $output->writeln(sprintf('Running Cron Task <info>%s</info>', $crontask));
+                $output->writeln(sprintf('Running Cron Task <info>%s</info>', $crontask->getName()));
 
                 // Set $lastrun for this crontask
                 $crontask->setLastRun(new \DateTime());
@@ -73,11 +73,9 @@ class cronCommand extends ContainerAwareCommand
 
     private function runCommand($string)
     {
-        // Split namespace and arguments
-        $namespace = split(' ', $string)[0];
-
+        
         // Set input
-        $command = $this->getApplication()->find($namespace);
+        $command = $this->getApplication()->find($string);
         $input = new StringInput($string);
 
         // Send all output to the console

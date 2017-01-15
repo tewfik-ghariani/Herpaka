@@ -16,7 +16,7 @@ class CronTask
     private $name;
 
     /**
-     * @Field(type="array")
+     * @Field(type="string")
      */
     private $commands;
 
