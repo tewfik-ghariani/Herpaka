@@ -1,12 +1,15 @@
 var app = angular.module('app');
 
-app.controller('listproductCtrl', ['$scope','$location', '$http', 
-  function ($scope, $location, $http) {
-  	/**url = $location.path('/list');
+app.controller('listproductCtrl', ['$scope', 'providerFactory', 
+  function ($scope, providerFactory) {
 
-    $http.get(url).then(function(data) {
-      $scope.products = data;
-    });
-**/
+    	 	console.log(providerFactory);
+  	$scope.products = providerFactory.fetchProducts().then(function(response){
+
+  		$scope.products = response.data;
+  	});
+
+
+
    
   }]);

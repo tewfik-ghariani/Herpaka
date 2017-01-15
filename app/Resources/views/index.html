@@ -47,8 +47,13 @@
     <script src="{{ asset('assets/vendor/angular/angular.min.js')}}"></script>
     <script src="{{ asset('assets/vendor/angular-route/angular-route.min.js')}}"></script>
 
+    <!-- main angular.module -->
     <script src="{{ asset('main_js/app.js')}}"></script>
+    <!-- routes -->
     <script src="{{ asset('main_js/config.js')}}"></script>
+    <!-- services -->
+    <script src="{{ asset('main_js/services.js')}}"></script>
+
     <script src="{{ asset('main_js/autocomplete.js')}}"></script>
 
 
@@ -70,7 +75,7 @@
     <b3>haha</b3> 
      </script>
     <script type="text/ng-template" id="listproduct.html"> 
-
+            [[products]]
     </script>
     <script type="text/ng-template" id="login.html"> <b1>hi</b1></script>
     <script type="text/ng-template" id="register.html"> <b3>bye</b3></script>
