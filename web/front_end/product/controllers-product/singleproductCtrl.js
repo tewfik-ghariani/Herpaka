@@ -1,6 +1,6 @@
-var productControllers = angular.module('productControllers', []);
+var app = angular.module('app');
 
-productControllers.controller('singleproductCtrl', ['$scope', '$routeParams',
+app.controller('singleproductCtrl', ['$scope', '$routeParams',
 
   function($scope, $routeParams) {
 

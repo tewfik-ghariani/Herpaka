@@ -1,6 +1,6 @@
-var routesModule = angular.module('app');
+var app = angular.module('app');
 
-routesModule.config(['$routeProvider',
+app.config(['$routeProvider',
   function($routeProvider) {
 
   
@@ -11,7 +11,7 @@ routesModule.config(['$routeProvider',
       }).
       when('/show', {
         templateUrl: "listproduct.html",     
-           controller: 'listproductCtrl'
+        controller: 'listproductCtrl'
       }).
       when('/products/:productId', {
         templateUrl: "signleproduct.html",

@@ -67,7 +67,7 @@ jQuery(document).ready(function($){
     $(".navbar-nav li a").click(function(){
         $(".navbar-collapse").removeClass('in');
     });    
-    
+    /**
     // jQuery Scroll effect
     $('.navbar-nav li a, .scroll-to-up').bind('click', function(event) {
         var $anchor = $(this);
@@ -78,7 +78,7 @@ jQuery(document).ready(function($){
 
         event.preventDefault();
     });    
-    
+    **/
     // Bootstrap ScrollPSY
     $('body').scrollspy({ 
         target: '.navbar-collapse',

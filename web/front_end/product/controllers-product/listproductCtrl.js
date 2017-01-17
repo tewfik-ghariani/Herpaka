@@ -1,10 +1,28 @@
-var productControllers = angular.module('productControllers', []);
+var app = angular.module('app');
 
-phonecatControllers.controller('listProductCtrl', ['$scope', '$http', 
-  function ($scope, $http) {
-    $http.get('products/procuts.json').success(function(data) {
-      $scope.products = data;
-    });
+app.controller('listproductCtrl', ['$scope', 'providerFactory', 
+  function ($scope, providerFactory) {
 
-    //$scope.orderProp = 'age';
+  	$scope.provider = providerFactory.fetchProducts().then(function(response){
+
+  		$scope.provider = response.data;
+  		if ($scope.provider.success) 
+  		{
+  			$scope.products =$scope.provider.data;
+  		}
+  	});
+
+  	$scope.checkVariation = function(variation){
+
+  		if (variation >0)
+  		{
+  			return "redclass";
+  		}
+  		else {
+  			return "greenclass";
+  			
+  		}
+  	}
+
+   
   }]);
