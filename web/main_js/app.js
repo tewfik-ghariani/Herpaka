@@ -1,4 +1,4 @@
-var app = angular.module('app', ['autocomplete','ngRoute']).config(function($interpolateProvider){
+var app = angular.module('app', ['autocomplete','ngRoute','angular-cache']).config(function($interpolateProvider){
     $interpolateProvider.startSymbol('[[').endSymbol(']]');
 });
 

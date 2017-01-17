@@ -1,8 +1,8 @@
 var app = angular.module('app');
 
-app.controller('listproductCtrl', ['$scope', 'providerFactory', 
-  function ($scope, providerFactory) {
-
+app.controller('listproductCtrl', ['$scope', 'productService',
+  function ($scope, productService) {
+/**
   	$scope.provider = providerFactory.fetchProducts().then(function(response){
 
   		$scope.provider = response.data;
@@ -11,6 +11,11 @@ app.controller('listproductCtrl', ['$scope', 'providerFactory',
   			$scope.products =$scope.provider.data;
   		}
   	});
+**/
+
+  $scope.products = productService.allProducts();
+
+
 
   	$scope.checkVariation = function(variation){
 

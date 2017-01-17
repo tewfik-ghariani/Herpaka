@@ -49,3 +49,101 @@ app.factory('providerFactory', ['$http', function($http) {
 
 
 }]);
+
+//service to preserve the products in the cache
+
+app.service('productService', ['CacheFactory','providerFactory', function (CacheFactory,providerFactory) {
+  var productCache;
+    var temp ;
+
+  // Check to make sure the cache doesn't already exist
+  if (!CacheFactory.get('productCache')) {
+  productCache = CacheFactory.createCache('productCache', {
+  deleteOnExpire: 'aggressive',
+  recycleFreq: 60000
+  });
+
+        
+productCache.put('show', {
+    name: 'John',
+    skills: ['programming', 'piano']
+});
+
+
+    providerFactory.fetchProducts().then(function(response){
+      response = response.data;
+      console.log(response);
+            // if (response.success) [ Or handle promises ] 
+productCache.put('show2', response.data)
+
+             });
+
+
+
+
+
+  }
+
+
+
+ var productCache = CacheFactory.get('productCache');
+ var products= productCache.get('show2');
+ return {
+      allProducts: function () {
+        console.log(products);
+        return products;
+      }
+  }
+}]);
+
+
+/*app.service('productService', ['CacheFactory','providerFactory', function (CacheFactory,providerFactory) {
+  var productCache;
+
+  // Check to make sure the cache doesn't already exist
+  if (!CacheFactory.get('productCache')) {
+      
+               productCache = CacheFactory.createCache('productCache', {
+        //maxagge
+        maxAge: 5 * 60 * 1000, // 5 minutes to have products reloaded
+        deleteOnExpire: 'aggressive',
+        onExpire: function (key, value) {
+
+     
+          providerFactory.fetchProducts().then(function(response){
+
+            if (response.success) {
+              productCache.put(response.data);
+            }
+     
+            else 
+            {
+            //handle exceptions
+            }
+          });
+
+        }
+      });
+        var temp =  providerFactory.fetchProducts().then(function(response){
+
+            if (response.success) {
+              console.log(response.data);
+temp = response.data
+            } });
+CacheFactory('productCache').put(temp);
+
+
+
+  }
+
+var productCache = CacheFactory.get('productCache');
+
+ return {
+      allProducts: function () {
+        console.log(productCache);
+        return productCache;
+      }
+  };
+  
+}]);
+*/
