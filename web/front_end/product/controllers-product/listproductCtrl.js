@@ -20,9 +20,6 @@ app.controller('listproductCtrl', ['$scope', 'providerFactory',
   		}
   		else {
   			return "greenclass";
-  			
   		}
   	}
-
-   
   }]);
