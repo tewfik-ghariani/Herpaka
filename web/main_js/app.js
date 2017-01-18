@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 var app = angular.module('app', ['autocomplete','ngRoute','ngTouch', 'ui.bootstrap','angular-cache']).config(function($interpolateProvider){
-=======
-var app = angular.module('app', ['autocomplete', 'ngRoute', 'ngTouch', 'ui.bootstrap']).config(function($interpolateProvider) {
->>>>>>> DevDoflamingoo
     $interpolateProvider.startSymbol('[[').endSymbol(']]');
 });
 
