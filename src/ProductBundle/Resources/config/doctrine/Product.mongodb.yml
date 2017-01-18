@@ -3,6 +3,8 @@ ProductBundle\Document\Product:
     fields:
         id:
             id:  true
+        sid:
+            type: integer
         productName:
             type: string
         category:
