@@ -1,10 +1,10 @@
 var app = angular.module('app');
 
-app.controller('listproductCtrl', ['$scope', 'productService',
-  function ($scope, productService) {
+app.controller('listproductCtrl', ['$scope', 'cacheService',
+  function ($scope, cacheService) {
 
 
-  $scope.products = productService.allProducts().then(function(value) {
+  $scope.products = cacheService.allProducts().then(function(value) {
         $scope.products =  value;
       });
 

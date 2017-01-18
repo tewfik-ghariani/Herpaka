@@ -52,18 +52,34 @@ app.factory('providerFactory', ['$http', function($http) {
 
 //service to preserve the products in the cache
 
-app.service('productService', ['CacheFactory','providerFactory', '$q', function (CacheFactory,providerFactory,$q) {
+app.service('cacheService', ['CacheFactory','providerFactory', '$q', function (CacheFactory,providerFactory,$q) {
  var productCache = CacheFactory.get('productCache');
     
+       var defer = $q.defer();
+
 
   // Check to make sure the cache doesn't already exist
   if (!CacheFactory.get('productCache')) {
   productCache = CacheFactory.createCache('productCache', {
+  maxAge:  5 *60 * 1000,
   deleteOnExpire: 'aggressive',
-  recycleFreq: 60000
-  });
+  recycleFreq: 60000,
+  onExpire: function (key,value) {
 
-       var defer = $q.defer();
+    providerFactory.fetchProducts().then(function(response){
+   
+      response = response.data;
+       if (response.success){
+       defer.resolve(response.data);
+        productCache.put('show', defer.promise);
+                          }
+             });
+
+
+  }
+
+
+  });
 
     providerFactory.fetchProducts().then(function(response){
    
@@ -72,15 +88,19 @@ app.service('productService', ['CacheFactory','providerFactory', '$q', function 
        defer.resolve(response.data);
                           }
              });
- productCache.put('show', defer.promise);
+
   }
+
+
 
   else {
-    console.log(productCache.get('show'));
+
     defer.resolve(productCache.get('show'));
-     productCache.put('show', defer.promise);
+
 
   }
+
+
 
  productCache.put('show', defer.promise);
 
@@ -90,9 +110,8 @@ app.service('productService', ['CacheFactory','providerFactory', '$q', function 
       allProducts: function () {
         
         return products;
-
-
       }
+
   }
 }]);
 
