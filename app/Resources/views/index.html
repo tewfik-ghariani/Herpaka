@@ -1,147 +1,123 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Herpaka app</title>
-    
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
-
     <!--for template register-->
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+<<<<<<< HEAD
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>    
    <!--jQuery-->
     <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>    
+=======
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <!--jQuery-->
+    <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+>>>>>>> DevDoflamingoo
     <script src="{{ asset('main_js/main.js')}}"></script>
     <!-- jQuery sticky menu -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.3/jquery.sticky.min.js"></script>
-
     <!-- jQuery easing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.js"></script>
-
     <!-- owl Carousel -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js"></script>   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css"> 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css')}}">
     <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-
+    <link rel="stylesheet" href="{{ asset('assets/vendor/angular-bootstrap/ui-bootstrap-csp.css')}}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/font-awesome/css/font-awesome.min.css')}}">
-    
     <!-- Custom CSS -->
-
     <link rel="stylesheet" href="{{ asset('global_css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('global_css/login.css')}}">
     <link rel="stylesheet" href="{{ asset('global_css/responsive.css')}}">
-
     <link rel="stylesheet" href="{{ asset('main_css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('main_css/autocomplete.css')}}">
-
     <!-- angular -->
     <!--added for routes -->
+<<<<<<< HEAD
     <script src="{{ asset('assets/vendor/angular/angular.min.js')}}"></script>
     <script src="{{ asset('assets/vendor/angular-route/angular-route.min.js')}}"></script>
     <script src="{{ asset('assets/vendor/angular-cache/dist/angular-cache.min.js')}}"></script>
 
+=======
+    <script src="{{ asset('assets/vendor/angular/angular.js')}}"></script>
+>>>>>>> DevDoflamingoo
     <!-- main angular.module -->
+    <script src="{{ asset('assets/vendor/angular-route/angular-route.min.js')}}"></script>
+    <script src="{{ asset('assets/vendor/angular-animate/angular-animate.min.js')}}"></script>
+    <script src="{{ asset('assets/vendor/angular-touch/angular-touch.min.js')}}"></script>
+    <script src="{{ asset('assets/vendor/angular-bootstrap/ui-bootstrap.min.js')}}"></script>
+    <script src="{{ asset('assets/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js')}}"></script>
     <script src="{{ asset('main_js/app.js')}}"></script>
     <!-- routes -->
     <script src="{{ asset('main_js/config.js')}}"></script>
     <!-- services -->
     <script src="{{ asset('main_js/services.js')}}"></script>
-
     <script src="{{ asset('main_js/autocomplete.js')}}"></script>
-
-
     <!-- Controllers -->
     <script src="{{ asset('front_end/product/controllers-product/listproductCtrl.js')}}"></script>
+    <script src="{{ asset('front_end/product/controllers-product/ModalDemoCtrl.js')}}"></script>
+    <script src="{{ asset('front_end/product/controllers-product/ModalInstanceCtrl.js')}}"></script>
     <script src="{{ asset('front_end/product/controllers-product/singleproductCtrl.js')}}"></script>
-    
     <script src="{{ asset('front_end/user/controller-user/loginCtrl.js')}}"></script>
     <script src="{{ asset('front_end/user/controller-user/registerCtrl.js')}}"></script>
     <script src="{{ asset('front_end/mainCtrl.js')}}"></script>
-     
     <!-- views -->
-
     <!--templates-->
-
     <!--template for shop page-->
-         <script type="text/ng-template" id="listproduct.html"> 
-   
-        <!--div class="col-sm-6">
-                    <div class="shopping-item">
-                        <a href="cart.html">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+    <script type="text/ng-template" id="listproduct.html">
+        <div class="product-big-title-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="product-bit-title text-center">
+                            <h2>Shop</h2>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End site branding area -->
-    
-   
-    <div class="product-big-title-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-bit-title text-center">
-                        <h2>Shop</h2>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-
-    <div class="single-product-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <!--img src="img/product-2.jpg" alt=""-->
-
+        <div class="single-product-area">
+            <div class="zigzag-bottom"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <!--img src="img/product-2.jpg" alt=""-->
+                            </div>
+                            <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         </div>
-                        <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                                               
                     </div>
                 </div>
-            </div>
-            
-            <div class="row">
+                <div class="row">
                 <div class="col-md-12">
-                    <!--div class="product-pagination text-center">
-                        <nav-->
-                          <!--ul class="pagination" ng-repeat="product in products"-->
-                          <ul ng-repeat="product in products">
-
-                            <!--li>
-                              <a href
-                               aria-label="Previous">
-
-                                <span aria-hidden="true">&laquo;</span>
-                              </a>
-                            </li-->
-
+                        <ul ng-repeat="product in products">
                             <li><a href="#">[[product.ProductName]]</a></li>
                             <li><a href="#">[[product.Category]]</a></li><a href="#">[[product.Brand]]</a></li>
-                            <li><img class=thumbnail ng-src="[[product.Image]]"></a></li>
+                            <li><img class=thumbnail ng-src="[[product.Image]]"></a>
+                            </li>
                             <li><a href="#">[[product.ProductMaterial]]</a></li>
                             <li><a href="#"> [[product.Delivery.date | date]]</a></li>
                             <!--to do: details-->
                             <li><a href="#">[[product.Details]]</a></li>
                             <!--li><a href="#">[[product.variation]]</a></li-->
                             <!--li>
-                              <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                              </a>
-                            </li-->
+                                  <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                              </li-->
                             <div class="product-carousel-price">
+<<<<<<< HEAD
                             
                             <ins>[[product.Price | currency]]</ins> 
 
@@ -154,37 +130,26 @@
                           </ul>
                         <!--/nav>                        
                     </div-->
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    
- 
-
-             
-        </script-->
-
-    <!--template for categories-->
-
-    <!--template for login-->
-
-    <script type="text/ng-template" id="login.html"> 
-    <div class="product-big-title-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-bit-title text-center">
-                        <h2>Welcome</h2>
+=======
+                                <!--to do-->
+                                <!--ins>$[[product.price]]</ins> <del>[[product.price]]+ [[product.variation]]</del-->
+                                <ins>[[product.Price | currency]]</ins>
+                                <p ng-class=checkVariation(product.Variation)> [[product.Variation]]</p>
+                            </div>
+                            <div class="product-option-shop">
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="" ng-click="switchTo('/cart')">Add to cart</a>
+                            </div>
+                        </ul>
                     </div>
+>>>>>>> DevDoflamingoo
                 </div>
             </div>
         </div>
-    </div>
-    <br/><br/>
+    </script>
+    <!--template for categories-->
+    <!--template for login-->
     <!--the one generated by symfony-->
-     <!--form action="[[ path('localized_check_path') ]]" method="post">
+    <!--form action="[[ path('localized_check_path') ]]" method="post">
         <label for="username">Username:</label>
         <input type="text" id="username" name="_username" value="[[ last_username ]]" />
 
@@ -194,139 +159,137 @@
         <input type="hidden" name="_target_path" value="" />
 
         <input type="submit" name="login" />
-    </form>
-
-    </script-->
-    <div class="container">
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <div class="account-wall">
-                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
-                    alt="">
-                    <br/><br/>
-                <form class="form-signin">
-                <input type="text" class="form-control" placeholder="Email" required autofocus>
-                <br/>
-                <input type="password" class="form-control" placeholder="Password" required>
-                <br/>
-                <br/>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">
-                    Sign in</button>
-                <label class="checkbox pull-left">
-                 <br/><br/>
-                    <input type="checkbox" value="remember-me">
-                    Remember me
-                </label>
-                <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
-                </form>
-            </div>
-            <a href="#" class="text-center new-account">Create an account </a>
+    </form-->
+    <script type="text/ng-template" id="login.html">
+        <div class="product-big-title-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="product-bit-title text-center">
+                            <h2>Welcome</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
+        <br/>
+        <br/>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-md-offset-4">
+                    <div class="account-wall">
+                        <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
+                        <br/>
+                        <br/>
+                        <form class="form-signin">
+                            <input type="text" class="form-control" placeholder="Email" required autofocus>
+                            <br/>
+                            <input type="password" class="form-control" placeholder="Password" required>
+                            <br/>
+                            <br/>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                Sign in</button>
+                            <label class="checkbox pull-left">
+                                <br/>
+                                <br/>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                            <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                        </form>
+                    </div>
+                    <a href="#" class="text-center new-account">Create an account </a>
+                </div>
+            </div>
+        </div>
+    </script>
     <!--template for register-->
     <script type="text/ng-template" id="register.html">
-
-    <div class="container">
+        <div class="container">
             <div class="row main">
                 <div class="panel-heading">
-                   <div class="panel-title text-center">
+                    <div class="panel-title text-center">
                         <h2 class="title">Thank you for signing up</h2>
                         <hr />
                     </div>
-                </div> 
+                </div>
                 <div class="main-login main-center">
                     <form class="form-horizontal" method="post" action="#">
-                        
                         <div class="form-group">
                             <label for="name" class="cols-sm-2 control-label">Your Name</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" />
                                 </div>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="email" class="cols-sm-2 control-label">Your Email</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
                                 </div>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="username" class="cols-sm-2 control-label">Username</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+                                    <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username" />
                                 </div>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="password" class="cols-sm-2 control-label">Password</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
                                 </div>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+                                    <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm your Password" />
                                 </div>
                             </div>
                         </div>
-
                         <div class="product-option-shop">
                             <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Register</a>
-                        </div>   
-
+                        </div>
                         <!--div class="form-group ">
                             <button type="button" class="btn btn-primary btn-lg btn-block login-button" background-colour="#4CAF50">Register</button>
                         </div-->
                         <div class="login-register">
                             <a href="index.php">Login</a>
-                         </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-
-</script>
-
-
+    </script>
     <!--template for cart-->
-
-    <script type="text/ng-template" id="cart.html"> 
-            template of cart
+    <script type="text/ng-template" id="cart.html">
+        template of cart
     </script>
-
     <!--template for checkout-->
-    <script type="text/ng-template" id="checkout.html"> 
-            template of checkout
+    <script type="text/ng-template" id="checkout.html">
+        template of checkout
     </script>
-    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  
-  </head>
-  <body>    
+      <![endif]-->
+</head>
+
+<body>
     <div class="mainmenu-area">
         <div class="container">
             <div class="row">
@@ -337,49 +300,105 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                </div> 
-                <div class="collapse navbar-collapse" >
-            
-                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="" ng-click="switchTo('/login')"> Log in </a></li>
-                        <li><a href="" ng-click="switchTo('/register')"> Register </a></li>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <div class="col-sm-12 col-md-12">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="" ng-click="switchTo('/login')"> Log in </a></li>
+                            <li><a href="" ng-click="switchTo('/register')"> Register </a></li>
                         </ul>
-                    <ul class="nav navbar-nav" >
-                                       <li><a href="" ng-click="switchTo('/home')">Home</a></li>
-                                       <li><a href="" ng-click="switchTo('/show')">Shop page</a></li>
-                                       <li><a href="">Categories</a></li>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="" ng-click="switchTo('/home')">Home</a></li>
+                        <li><a href="" ng-click="switchTo('/show')">Shop page</a></li>
+                        <li><a href="">Categories</a></li>
+                        <!--li>
                             <div id="custom-search-input">
-                            <div class="input-group col-md-12">
-
-
-
-                            <div ng-controller="MyCtrl" style="color: black !important">
-      <autocomplete ng-model="result" attr-placeholder="type to search movies..." click-activation="true" data="movies" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
-            </div>
-                                     
-
-                                <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="button">
-                                        <span class=" glyphicon glyphicon-search"></span>
+                                <div class="input-group offset-md-6 col-md-6">
+                                    <div ng-controller="MyCtrl" style="color: black !important">
+                                        <autocomplete ng-model="result" attr-placeholder="type to search movies..." click-activation="true" data="movies" on-type="doSomething" on-select="doSomethingElse">
+                                        </autocomplete>
+                                    </div>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-danger" type="button">
+                                            <span class=" glyphicon glyphicon-search"></span>
                                     </button>
-                                </span>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    
+                        </li-->
                     </ul>
-                </div>  
+                    <div class="col-sm-5 col-md-5 pull-right">
+                        <div ng-controller="ModalDemoCtrl as ctrl" class="modal-demo">
+                            <script type="text/ng-template" id="myModalContent.html">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="modal-title">Add products to your cart!</h3>
+                                </div>
+                                <div class="modal-body" id="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="nb">How many products did you order?</label>
+                                            <input type="number" class="form-control" id="nb">
+                                        </div>
+                                    </form>
+                                    Selected: <b>[[ ctrl.selected.item ]]</b>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-success" type="button" ng-click="ctrl.ok()">OK</button>
+                                    <button class="btn btn-danger" type="button" ng-click="ctrl.cancel()">Cancel</button>
+                                </div>
+                            </script>
+                            <a href="#" class="pull-right" ng-click="ctrl.open()">
+                                <img src="{{ asset('assets/images/Shopping-Cart.png')}}" alt="Shopping-Cart" height="42" width="42">
+                            </a>
+                        </div>
+                        <form class="navbar-form" role="search">
+                            <div class="input-group">
+                                <!--input type="text" class="form-control" placeholder="Search" name="q"-->
+                                <div ng-controller="MyCtrl" style="color: black !important">
+                                    <autocomplete ng-model="result" attr-placeholder="type to search products..." click-activation="true" data="products" on-type="doSomething" on-select="doSomethingElse">
+                                    </autocomplete>
+                                </div>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-danger" type="button" ng-click="test()">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </div> 
+    </div>
     <!-- End mainmenu area -->
-    
-
-    <!-- Start Partial View -->
-             <div  ng-view class="slider-area">
+    <!-- Start Modal Area -->
+    <!--div ng-controller="ModalDemoCtrl as ctrl" class="modal-demo">
+        <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
             </div>
+            <div class="modal-body" id="modal-body">
+                <ul>
+                    <li ng-repeat="item in ctrl.items">
+                        <a href="#" ng-click="$event.preventDefault(); ctrl.selected.item = item">[[ item ]]</a>
+                    </li>
+                </ul>
+                Selected: <b>[[ ctrl.selected.item ]]</b>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ctrl.ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="ctrl.cancel()">Cancel</button>
+            </div>
+        </script>
+
+        <button type="button" class="btn btn-default" ng-click="ctrl.open()">Open me!</button>
+    </div-->
+    <!-- End Modal Area -->
+    <!-- Start Partial View -->
+    <div ng-view class="slider-area">
+    </div>
     <!-- End Partial View -->
-
-
     <div class="footer-top-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
@@ -387,8 +406,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
                         <h2><span>Herpaka app</span></h2>
-                        <p>we're the best, we're awesome, we'll rock the ATS project.
-                        oh lalalalalalalalalalalalalalalalalalalalalalala</p>
+                        <p>we're the best, we're awesome, we'll rock the ATS project. oh lalalalalalalalalalalalalalalalalalalalalalala</p>
                         <div class="footer-social">
                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
                             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -398,7 +416,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">User Navigation </h2>
@@ -408,10 +425,9 @@
                             <li><a href="">Wishlist</a></li>
                             <li><a href="">Vendor contact</a></li>
                             <li><a href="">Front page</a></li>
-                        </ul>                        
+                        </ul>
                     </div>
                 </div>
-                
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categories</h2>
@@ -421,10 +437,9 @@
                             <li><a href="">LED TV</a></li>
                             <li><a href="">Computer</a></li>
                             <li><a href="">Gadets</a></li>
-                        </ul>                        
+                        </ul>
                     </div>
                 </div>
-                
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-newsletter">
                         <h2 class="footer-wid-title">Newsletter</h2>
@@ -438,7 +453,6 @@
             </div>
         </div>
     </div>
-    
     <div class="footer-bottom-area">
         <div class="container">
             <div class="row">
@@ -447,7 +461,6 @@
                         <p>&copy; HerpakaApp. All Rights Reserved. Coded with <i class="fa fa-heart"></i> by <a href="http://www.google.com" target="_blank">Herpaka</a></p>
                     </div>
                 </div>
-                
                 <div class="col-md-4">
                     <div class="footer-card-icon">
                         <i class="fa fa-cc-discover"></i>
@@ -458,9 +471,8 @@
                 </div>
             </div>
         </div>
-    </div> <!-- End footer bottom area -->
-       
+    </div>
+    <!-- End footer bottom area -->
+</body>
 
-
-  </body>
 </html>

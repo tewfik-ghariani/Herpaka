@@ -18,9 +18,6 @@ app.controller('listproductCtrl', ['$scope', 'cacheService',
   		}
   		else {
   			return "greenclass";
-  			
   		}
   	}
-
-   
   }]);
