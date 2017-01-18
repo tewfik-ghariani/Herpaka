@@ -5,6 +5,7 @@ namespace ProductBundle\Document;
 class Product
 {
 	protected $id;
+    protected $sid;
 	protected $productName;
 	protected $category;
 	protected $brand;
@@ -231,7 +232,9 @@ class Product
     */
     public function showProduct()
     {
-        $product = array("ProductName"=>$this->productName,
+        $product = array(
+                         "id"=>$this->sid,
+                         "ProductName"=>$this->productName,
                          "Category"=>$this->category,
                          "Brand"=>$this->brand,
                          "ProductMaterial"=>$this->productMaterial,
@@ -246,4 +249,29 @@ class Product
     }
 
 
+
+
+
+
+    /**
+     * Set sid
+     *
+     * @param integer $sid
+     * @return self
+     */
+    public function setSid($sid)
+    {
+        $this->sid = $sid;
+        return $this;
+    }
+
+    /**
+     * Get sid
+     *
+     * @return integer $sid
+     */
+    public function getSid()
+    {
+        return $this->sid;
+    }
 }

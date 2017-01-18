@@ -5,7 +5,7 @@
     use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 	use Symfony\Component\Console\Input\InputInterface;
 	use Symfony\Component\Console\Output\OutputInterface;
-
+	use ProductBundle\Document\Product;
 
 	class fetchCommand extends ContainerAwareCommand
 
@@ -54,7 +54,7 @@
 	    foreach ($array as $key => $jsons) { 
 
 
-		        $existing_product = $repository-> findOneByProductName($jsons['productName']);
+		        $existing_product = $repository-> findOneBySid($key);
 		        
 		        //selecting best price 
 		        $best_price = min($jsons['price'] , $provider2[$key]['price'] , $provider3[$key]['price'] , $provider4[$key]['price']) ;
@@ -65,6 +65,7 @@
 		        {
 		        $product = new Product();
 
+		        $product->setSid($key);
 		        $product->setProductName($jsons['productName']);
 		        $product->setCategory($jsons['category']);
 		        $product->setBrand($jsons['brand']);

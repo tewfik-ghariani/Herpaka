@@ -24,7 +24,6 @@ class ProductController extends Controller
 
  			}
 
-
  			$dm->clear();
     	
           return new JsonResponse([
