@@ -10,6 +10,18 @@ app.controller('listproductCtrl', ['$scope', 'cacheService',
 
 
 
+$scope.cartAdd = function (id) {
+
+alert('Added!');
+//ToDo use ngFlash
+
+
+cacheService.addToCart(id);
+
+};
+
+
+
   	$scope.checkVariation = function(variation){
 
   		if (variation >0)

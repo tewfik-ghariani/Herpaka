@@ -1,11 +1,22 @@
 var app = angular.module('app');
 
-app.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance','selectedProduct',
-  function ($scope, $uibModalInstance, selectedProduct) {
+app.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance','panier', 
+  function ($scope, $uibModalInstance, panier) {
+
+
+
+
+
+
+
   	var ctrl = this;
-  	ctrl.id = selectedProduct.id;
-  	console.log('okkeeeeeeeeeeeeeeeeeeeeeeeeeeey', ctrl.id)
-  	    ctrl.msg = 'kljfdlqkdsj fjsqdkljflqksj dhflkjdshf';
+
+
+ctrl.panier = panier;
+console.log("hereeee",ctrl.panier);
+
+  
+
   ctrl.items = ['item1', 'item2', 'item3'];
   	ctrl.ok = function () {
     $uibModalInstance.close(ctrl.selected.item);

@@ -8,6 +8,16 @@
                                             <input type="number" class="form-control" id="nb">
                                         </div>
                                     </form>
+                                      <div class="col-md-12">
+                        <ul ng-repeat="product in ctrl.panier">
+                           <li><a href="#">[[product.ProductName]]</a></li>
+                            <li><a href="#">[[product.Category]]</a>
+                                   <div class="product-carousel-price">
+                            <ins>[[product.Price | currency]]</ins>
+                                <p ng-class=checkVariation(product.Variation)> [[product.Variation]]</p>
+                            </div>
+
+                        </ul></div>
                                     Selected: <b>[[ ctrl.selected.item ]]</b>
                                 </div>
                                 <div class="modal-footer">

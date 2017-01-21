@@ -1,10 +1,21 @@
 var app = angular.module('app');
 
-app.controller('ModalDemoCtrl', [ '$uibModal','$scope',
-  function ($uibModal,$scope) {
+app.controller('ModalDemoCtrl', [ 'cacheService', '$uibModal','$scope',
+  function (cacheService, $uibModal,$scope) {
   	
   	var ctrl = this;
   	
+
+
+  //  ctrl.panier = cacheService.getCart().then(function(value) {
+    //  ctrl.panier = value;
+      //console.log('hourray'+ctrl.panier);
+
+    //});
+ 
+    console.log(ctrl.panier);
+                console.log('kk');
+
     //open modal
 
     ctrl.open = function(id) {
@@ -22,16 +33,18 @@ app.controller('ModalDemoCtrl', [ '$uibModal','$scope',
           /*items: function () {
             return ctrl.items;
           }*/
-          selectedProduct: function () {
-          return selectedProduct;
+
+          panier: function () {
+
+          return ctrl.panier;
           }
         }
       });
-      /*modalInstance.result.then(function (selectedItem) {
-        ctrl.selected = selectedItem;
-      }*/
+   
+   
+
       modalInstance.result.then(function () {
-        return selectedProduct;
+        return ctrl.panier;
       }, function () {
         console.log('Modal dismissed at: ' + new Date());
       });
