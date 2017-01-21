@@ -13,6 +13,10 @@ app.config(['$routeProvider',
             templateUrl: "listproduct.html",
             controller: 'listproductCtrl'
         }).
+         when('/categories', {
+            templateUrl: "categories.html",
+            controller: 'categoriesCtrl'
+        }).
         when('/products/:productId', {
             templateUrl: "signleproduct.html",
             controller: 'singleproductCtrl'

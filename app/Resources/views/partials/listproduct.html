@@ -1,0 +1,45 @@
+<div class="product-big-title-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="product-bit-title text-center">
+                            <h2>Shop</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-product-area">
+            <div class="zigzag-bottom"></div>
+            <div class="container">
+                <div class="row">
+                <div class="col-md-12">
+                        <ul ng-repeat="product in products">
+                            <li><a href="#">[[product.ProductName]]</a></li>
+                            <li><a href="#">[[product.Category]]</a></li><a href="#">[[product.Brand]]</a></li>
+                            <li><img class=thumbnail ng-src="[[product.Image]]"></a>
+                            </li>
+                            <li><a href="#">[[product.ProductMaterial]]</a></li>
+                            <li><a href="#"> [[product.Delivery.date | date]]</a></li>
+                            <!--to do: details-->
+                            <li><a href="#">[[product.Details]]</a></li>
+                            <!--li><a href="#">[[product.variation]]</a></li-->
+                            <!--li>
+                                  <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                              </li-->
+                            <div class="product-carousel-price">
+                                <!--to do-->
+                                <!--ins>$[[product.price]]</ins> <del>[[product.price]]+ [[product.variation]]</del-->
+                                <ins>[[product.Price | currency]]</ins>
+                                <p ng-class=checkVariation(product.Variation)> [[product.Variation]]</p>
+                            </div>
+                            <div class="product-option-shop">
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="" ng-click="switchTo('/cart')">Add to cart</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
