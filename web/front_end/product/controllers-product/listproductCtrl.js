@@ -10,14 +10,5 @@ app.controller('listproductCtrl', ['$scope', 'cacheService',
 
 
 
-  	$scope.checkVariation = function(variation){
-
-  		if (variation >0)
-  		{
-  			return "redclass";
-  		}
-  		else {
-  			return "greenclass";
-  		}
-  	}
+  	
   }]);

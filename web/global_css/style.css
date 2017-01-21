@@ -997,9 +997,16 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .product-option-shop {
     margin-top: 15px;
 }
-
+.product-option-shop2 {
+    margin-top: 15px;
+    text-align: left;
+}
 .single-shop-product {margin-bottom: 50px}
 
 .pagination > li > a, .pagination > li > span {
   color: #1abc9c;
+}
+.my-back-button {
+content: url('returnbutton.png');
+width: 48px;
 }

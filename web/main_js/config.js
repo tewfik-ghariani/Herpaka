@@ -18,7 +18,7 @@ app.config(['$routeProvider',
             controller: 'categoriesCtrl'
         }).
         when('/show/:productId', {
-            templateUrl: "signleproduct.html",
+            templateUrl: "singleproduct.html",
             controller: 'singleproductCtrl'
         }).
         when('/:userId/cart', {

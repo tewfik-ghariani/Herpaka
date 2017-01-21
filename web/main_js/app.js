@@ -9,6 +9,17 @@ app.run(['$rootScope', '$location', function($rootScope, $location) {
         return $location.path(headed)
 
     };
+
+    $rootScope.checkVariation = function(variation){
+
+        if (variation >0)
+        {
+            return "redclass";
+        }
+        else {
+            return "greenclass";
+        }
+    };
 }]);
 
 
