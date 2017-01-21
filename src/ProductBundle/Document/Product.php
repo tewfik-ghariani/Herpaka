@@ -233,7 +233,7 @@ class Product
     public function showProduct()
     {
         $product = array(
-                         "id"=>$this->sid,
+                         "id"=>$this->swid,
                          "ProductName"=>$this->productName,
                          "Category"=>$this->category,
                          "Brand"=>$this->brand,

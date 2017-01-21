@@ -119,6 +119,10 @@ body{
     color: #fff;
     background-color:#59b5fa;
 }
+img.center{
+    display: block;
+    margin: 0 auto;
+}
 @media(max-width:768px){
     #login-dp{
         background-color: inherit;
