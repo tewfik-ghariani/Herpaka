@@ -4,13 +4,11 @@ app.controller('ModalDemoCtrl', [ '$uibModal','$scope',
   function ($uibModal,$scope) {
   	
   	var ctrl = this;
-  	ctrl.hello = function() {
-      console.log("hellllllllllllllllllllllllllllllllllllllll")
-    }
+  	
     //open modal
 
     ctrl.open = function(id) {
-      console.log('hourrrrrrrrrrrrrrrrrrraaaaaaaaaaaaaaaaaay', $scope.msg )
+     
       var selectedProduct = {
         'id': id
       };

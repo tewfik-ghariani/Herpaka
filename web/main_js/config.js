@@ -6,7 +6,7 @@ app.config(['$routeProvider',
 
         $routeProvider.
         when('/home', {
-            templateUrl: "index.html",
+            templateUrl: "home.html",
             controller: 'mainCtrl'
         }).
         when('/show', {
@@ -17,7 +17,7 @@ app.config(['$routeProvider',
             templateUrl: "categories.html",
             controller: 'categoriesCtrl'
         }).
-        when('/products/:productId', {
+        when('/show/:productId', {
             templateUrl: "signleproduct.html",
             controller: 'singleproductCtrl'
         }).

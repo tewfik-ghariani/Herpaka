@@ -34,7 +34,6 @@ app.controller('MyCtrl', function($scope, ProductRetriever, providerFactory) {
     $scope.pr = [];
     $scope.products = providerFactory.fetchProducts();
     $scope.products.then(function(resp) {
-        console.log('heeeeeere', resp.data.data);
         $scope.pr = resp.data.data;
         $scope.products = ProductRetriever.getproducts("...", getNames($scope.pr), getNames($scope.pr));
         $scope.products.then(function(data) {

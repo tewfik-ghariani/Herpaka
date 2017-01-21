@@ -16,7 +16,13 @@
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>    
    <!--jQuery-->
     <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>    
+    <script src="{{ asset('assets/vendor/jquery.easing/js/jquery.easing.min.js')}}"></script>
+    <script src="{{ asset('assets/vendor/jquery.sticky/jquery.sticky.js')}}"></script>
 
+    <!--owl-carousel-->
+    <script src="{{ asset('assets/vendor/owl.carousel/dist/owl.carousel.min.js')}}"></script>
+    <link rel="stylesheet" href="{{ asset('assets/vendor/owl.carousel/dist/assets/owl.carousel.min.css')}}">
+    
 
     <script src="{{ asset('main_js/main.js')}}"></script>
     <!-- Bootstrap -->
@@ -76,6 +82,12 @@
     <script type="text/ng-template" id="listproduct.html">
         {% include 'partials/listproduct.html' %}
     </script>
+
+    <!--template for singleproduct-->
+    <script type="text/ng-template" id="singleproduct.html">
+        {% include 'partials/singleproduct.html' %}
+    </script>
+
     
     <!--template for categories-->
     <!--this template has no controller-->
@@ -153,22 +165,7 @@
                     <div class="col-sm-5 col-md-5 pull-right">
                         <div ng-controller="ModalDemoCtrl as ctrl" class="modal-demo">
                             <script type="text/ng-template" id="myModalContent.html">
-                                <div class="modal-header">
-                                    <h3 class="modal-title" id="modal-title">Add products to your cart!</h3>
-                                </div>
-                                <div class="modal-body" id="modal-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="nb">How many products did you order?</label>
-                                            <input type="number" class="form-control" id="nb">
-                                        </div>
-                                    </form>
-                                    Selected: <b>[[ ctrl.selected.item ]]</b>
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-success" type="button" ng-click="ctrl.ok()">OK</button>
-                                    <button class="btn btn-danger" type="button" ng-click="ctrl.cancel()">Cancel</button>
-                                </div>
+                                {% include 'partials/cartmodal.html' %}
                             </script>
                             <a href="#" class="pull-right" ng-click="ctrl.open()">
                                 <img src="{{ asset('assets/images/Shopping-Cart.png')}}" alt="Shopping-Cart" height="42" width="42">
@@ -194,30 +191,7 @@
         </div>
     </div>
     <!-- End mainmenu area -->
-    <!-- Start Modal Area -->
-    <!--div ng-controller="ModalDemoCtrl as ctrl" class="modal-demo">
-        <script type="text/ng-template" id="myModalContent.html">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
-            </div>
-            <div class="modal-body" id="modal-body">
-                <ul>
-                    <li ng-repeat="item in ctrl.items">
-                        <a href="#" ng-click="$event.preventDefault(); ctrl.selected.item = item">[[ item ]]</a>
-                    </li>
-                </ul>
-                Selected: <b>[[ ctrl.selected.item ]]</b>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button" ng-click="ctrl.ok()">OK</button>
-                <button class="btn btn-warning" type="button" ng-click="ctrl.cancel()">Cancel</button>
-            </div>
-        </script>
-
-        <button type="button" class="btn btn-default" ng-click="ctrl.open()">Open me!</button>
-    </div-->
-    <!-- End Modal Area -->
-   
+    
     <!-- Start Partial View -->
     <div ng-view class="slider-area">
     </div>
