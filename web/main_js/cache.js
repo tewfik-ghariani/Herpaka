@@ -51,17 +51,20 @@ var cartCache = CacheFactory.get('cartCache');
 
 
  if (!cartCache) {
-  cartCache = CacheFactory.createCache('cartCache');}
+  cartCache = CacheFactory.createCache('cartCache', {
+storageMode: "localStorage"
+
+  });}
 
 
 
 self.getCart = function () {
-
+var key = cartCache.keys();
 var toBuy = [];
 
 	for (i=0; i<cartCache.info().size; i++){
 
-		toBuy.push(cartCache.get(i));
+		toBuy.push(cartCache.get(key[i]));
 	}
 
 return toBuy;       
@@ -70,11 +73,10 @@ return toBuy;
 
 
 
-self.addToCart = function (id) {
+self.addToCart = function (prod) {
+console.log('prod     ______________ '+ prod);
+cartCache.put(prod.id, prod);
 
-self.allProducts().then(function(value) {
-cartCache.put(id, value[id]);
-});
 };
 
 

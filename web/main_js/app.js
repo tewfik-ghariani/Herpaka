@@ -2,7 +2,7 @@ var app = angular.module('app', ['autocomplete','ngRoute','ngTouch','ngAnimate',
     $interpolateProvider.startSymbol('[[').endSymbol(']]');
 });
 
-app.run(['$rootScope', 'cacheService', '$location', function( $rootScope,cacheService, $location) {
+app.run(['$rootScope', 'cacheService', '$location', function($rootScope,cacheService, $location) {
 
     $rootScope.switchTo = function(headed) {
 
@@ -11,12 +11,12 @@ app.run(['$rootScope', 'cacheService', '$location', function( $rootScope,cacheSe
     };
 
 
-$rootScope.cartAdd = function (id) {
+$rootScope.cartAdd = function (prod) {
 
 console.log('Added!');
 //ToDo use ngFlash
 
-cacheService.addToCart(id);
+cacheService.addToCart(prod);
 };
 
 
