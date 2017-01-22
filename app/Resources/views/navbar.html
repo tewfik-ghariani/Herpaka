@@ -1,6 +1,3 @@
-{% extends '::base.html.twig' %}
-
-{% block content %}
     <div>
         <div class="mainmenu-area">
             <div class="container">
@@ -14,10 +11,7 @@
                     </button>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        
-                        
-                    
+                    <ul class="nav navbar-nav navbar-right">                    
                     
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
@@ -31,19 +25,46 @@
                       <li><a href="/profile/change-password">Change password</a>
                     </ul>
                 </li>
+            </li>
+                <!--a href="{{ path('fos_user_security_logout') }}">
+                    Logout
+                </a-->
             {% else %}
                 <!--a href="{{ path('fos_user_security_login') }}">Login</a-->
                 <li><a href="{{ path('fos_user_security_login') }}" 
                         ng-click="switchTo('/login')"> Login </a></li>
                 <li><a href="{{ path('fos_user_registration_register') }}" 
-                        ng-click="switchTo('/register')"> Register </a></li>
+                        ng-click="switchTo('/register')"> Register</a></li>
             {% endif %}
         </ul>
         <ul class="nav navbar-nav">
-                        <li><a href="/#/home">Home</a></li>
-                        <li><a href="/#/show">Shop page</a></li>
-                        <li><a href="/#/categories">Categories</a></li>
+                        <li><a href="" ng-click="switchTo('/home')">Home</a></li>
+                        <li><a href="" ng-click="switchTo('/show')">Shop page</a></li>
+                        <li><a href="" ng-click="switchTo('/categories')">Categories</a></li>
                     </ul>
+                    <div class="col-sm-5 col-md-5 pull-right">
+                        <div ng-controller="ModalDemoCtrl as ctrl" class="modal-demo">
+                            <script type="text/ng-template" id="myModalContent.html">
+                                {% include 'partials/cartmodal.html' %}
+                            </script>
+                            <a href="#" class="pull-right" ng-click="ctrl.open()">
+                                <img src="{{ asset('assets/images/Shopping-Cart.png')}}" alt="Shopping-Cart" height="42" width="42">
+                            </a>
+                        </div>
+                        <form class="navbar-form" role="search">
+                            <div class="input-group">
+                                <div ng-controller="MyCtrl" style="color: black !important">
+                                    <autocomplete ng-model="result" attr-placeholder="type to search products..." click-activation="true" data="products" on-type="doSomething" on-select="doSomethingElse">
+                                    </autocomplete>
+                                </div>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-danger" type="button" ng-click="test()">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                     
                 </div>
             </div>
@@ -65,4 +86,3 @@
             {% block fos_user_content %}
             {% endblock fos_user_content %}
         </div>
-{% endblock %}

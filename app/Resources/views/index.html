@@ -124,7 +124,8 @@
 
 
 <body>
-    <div class="mainmenu-area">
+    {% include 'navbar.html' %} 
+    <!--div class="mainmenu-area">
         <div class="container">
             <div class="row">
                 <div class="navbar-header">
@@ -145,7 +146,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="" ng-click="switchTo('/home')">Home</a></li>
                         <li><a href="" ng-click="switchTo('/show')">Shop page</a></li>
-                        <li><a href="" ng-click="switchTo('/categories')">Categories</a></li>
+                        <li><a href="" ng-click="switchTo('/categories')">Categories</a></li-->
                         <!--li>
                             <div id="custom-search-input">
                                 <div class="input-group offset-md-6 col-md-6">
@@ -161,7 +162,7 @@
                                 </div>
                             </div>
                         </li-->
-                    </ul>
+                    <!--/ul>
                     <div class="col-sm-5 col-md-5 pull-right">
                         <div ng-controller="ModalDemoCtrl as ctrl" class="modal-demo">
                             <script type="text/ng-template" id="myModalContent.html">
@@ -172,9 +173,9 @@
                             </a>
                         </div>
                         <form class="navbar-form" role="search">
-                            <div class="input-group">
+                            <div class="input-group"-->
                                 <!--input type="text" class="form-control" placeholder="Search" name="q"-->
-                                <div ng-controller="MyCtrl" style="color: black !important">
+                                <!--div ng-controller="MyCtrl" style="color: black !important">
                                     <autocomplete ng-model="result" attr-placeholder="type to search products..." click-activation="true" data="products" on-type="doSomething" on-select="doSomethingElse">
                                     </autocomplete>
                                 </div>
@@ -189,7 +190,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div-->
     <!-- End mainmenu area -->
     
     <!-- Start Partial View -->
