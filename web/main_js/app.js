@@ -5,6 +5,7 @@ var app = angular.module('app', ['autocomplete','ngRoute','ngTouch','ngAnimate',
 app.run(['$rootScope', 'cacheService', '$location', function($rootScope,cacheService, $location) {
 
     $rootScope.switchTo = function(headed) {
+        console.log("switchTo");
 
         return $location.path(headed)
 
