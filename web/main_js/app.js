@@ -35,7 +35,7 @@ cacheService.addToCart(id);
 }]);
 
 
-app.controller('MyCtrl', function($scope, ProductRetriever, providerFactory) {
+app.controller('MyCtrl',['$scope', 'ProductRetriever', 'providerFactory', '$rootScope','cacheService', function($scope, ProductRetriever, providerFactory,$rootScope, cacheService) {
 
     /*$scope.products = ProductRetriever.getproducts("...");
     $scope.products.then(function(data){
@@ -49,15 +49,15 @@ app.controller('MyCtrl', function($scope, ProductRetriever, providerFactory) {
                 pn.push(tab[i].ProductName);
             }
         }
-        /*console.log('array')
-        console.log(pn)*/
+
         return pn;
     }
 
     $scope.pr = [];
-    $scope.products = providerFactory.fetchProducts();
+
+    $scope.products = cacheService.allProducts();
     $scope.products.then(function(resp) {
-        $scope.pr = resp.data.data;
+        $scope.pr = resp;
         $scope.products = ProductRetriever.getproducts("...", getNames($scope.pr), getNames($scope.pr));
         $scope.products.then(function(data) {
             $scope.products = getNames($scope.pr);
@@ -74,12 +74,20 @@ app.controller('MyCtrl', function($scope, ProductRetriever, providerFactory) {
         $scope.newproducts = ProductRetriever.getproducts(typedthings, getNames($scope.pr), getNames($scope.pr));
         $scope.newproducts.then(function(data) {
             $scope.products = data;
-            console.log("did something: "+ suggestion);
+            console.log("did something: "+ suggestion
+                );
         });
     }
+
+
+$scope.redirect = function(result) {
+    $rootScope.lookingFor = result;
+    $rootScope.switchTo('/show');
+}
+
 
     $scope.doSomethingElse = function(suggestion) {
         console.log("Suggestion selected: " + suggestion);
     }
 
-});
+}]);

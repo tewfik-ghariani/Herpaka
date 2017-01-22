@@ -5,9 +5,9 @@ var app = angular.module('app');
 
 //service to preserve the products in the cache
 
-app.service('cacheService', ['CacheFactory','providerFactory', '$q', function (CacheFactory,providerFactory,$q) {
+app.service('cacheService', ['CacheFactory','providerFactory', '$q','$timeout', function (CacheFactory,providerFactory,$q,$timeout) {
 
-	var self = this;
+ var self = this;
 
  var productCache = CacheFactory.get('productCache');
     
@@ -73,6 +73,7 @@ return toBuy;
 self.addToCart = function (id) {
 
 self.allProducts().then(function(value) {
+
 cartCache.put(id, value[id]);
 });
 };

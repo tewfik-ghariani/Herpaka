@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="row">
                 <div class="col-md-12">
-                        <ul ng-repeat="product in products">
+                        <ul ng-repeat="product in products | filter:lookingFor">
                             <li><a href="#">[[product.ProductName]]</a></li>
                             <li><a href="#">[[product.Category]]</a></li><a href="#">[[product.Brand]]</a></li>
                             <li><img class=thumbnail ng-src="[[product.Image]]"></a>
