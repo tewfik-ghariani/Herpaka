@@ -2,13 +2,25 @@ var app = angular.module('app', ['autocomplete','ngRoute','ngTouch','ngAnimate',
     $interpolateProvider.startSymbol('[[').endSymbol(']]');
 });
 
-app.run(['$rootScope', '$location', function($rootScope, $location) {
+app.run(['$rootScope', 'cacheService', '$location', function( $rootScope,cacheService, $location) {
 
     $rootScope.switchTo = function(headed) {
 
         return $location.path(headed)
 
     };
+
+
+$rootScope.cartAdd = function (id) {
+
+console.log('Added!');
+//ToDo use ngFlash
+
+cacheService.addToCart(id);
+};
+
+
+
 
     $rootScope.checkVariation = function(variation){
 

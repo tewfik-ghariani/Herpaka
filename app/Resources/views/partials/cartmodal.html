@@ -11,9 +11,9 @@
                                     
                                                      <ul ng-repeat="product in ctrl.panier">
                                                        <div class="row  well lead">
-                                                         <li >
-                                                             <div class="col-md-8">
-                                                                 <a href="#" ng-click="switchTo('show/[[product.id]]')">[[product.ProductName]]</a>
+                                                         <li>
+                                                             <div class="col-md-8">  
+                                                                 <a href="#" ng-click="ctrl.change([[product.id]])">[[product.ProductName]]</a>
                                                                  <b>[[product.Category]]</b>
                                                               </div>   
 

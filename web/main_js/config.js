@@ -42,7 +42,7 @@ app.config(['$routeProvider',
             controller: 'updateCtrl'
         }).
         otherwise({
-            redirectTo: '/'
+            redirectTo: '/home'
         });
     }
 ]);

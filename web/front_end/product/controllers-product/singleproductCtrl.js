@@ -10,8 +10,6 @@ app.controller('singleproductCtrl', ['$scope', 'cacheService', '$routeParams',
  		$scope.selectedProd = value[$scope.productId];
 
  	});
- 	console.log($scope.selectedProd);
-
-
+ 
 
   }]);

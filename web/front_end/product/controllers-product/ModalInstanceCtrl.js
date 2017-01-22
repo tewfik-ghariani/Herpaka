@@ -14,6 +14,11 @@ ctrl.removeProduct = function(id) {
 };
 
   
+ctrl.change = function(id) {
+$rootScope.switchTo('/show/' + id);
+};
+
+
 
   	ctrl.ok = function () {
     $uibModalInstance.close();

@@ -8,13 +8,4 @@ app.controller('listproductCtrl', ['$scope', 'cacheService',
         $scope.products =  value;
       });
 
-
-
-$scope.cartAdd = function (id) {
-
-console.log('Added!');
-//ToDo use ngFlash
-
-cacheService.addToCart(id);
-};
   }]);

@@ -23,7 +23,6 @@
                             </li>
                             <li><a href="#">[[product.ProductMaterial]]</a></li>
                             <li><a href="#"> [[product.Delivery.date | date]]</a></li>
-                            <!--to do: details-->
                             <li><a href="#">[[product.Details]]</a></li>
                             <div class="product-carousel-price">
                             <ins>[[product.Price | currency]]</ins>
@@ -31,12 +30,12 @@
                             </div>
 
                             <div class="product-option-shop">
-                                <!--change this : switchTo('/show/[[product.id]]') -->
-                                <a class="add_to_cart_button" href="" ng-click="switchTo('/show/2')">View details</a>
+ 
+                                <a class="add_to_cart_button" href="" ng-click="switchTo('/show/[[product.id]]')">View details</a>
                             </div>
                             <div class="product-option-shop">
-                                <a class="add_to_cart_button" href="" ng-click="switchTo('/cart')">Add to cart</a>
-                            </div-->
+                                <a class="add_to_cart_button" href="" ng-click="cartAdd(product.id)">Add to cart</a>
+                            </div>
                         </ul>
                     </div>
                 </div>

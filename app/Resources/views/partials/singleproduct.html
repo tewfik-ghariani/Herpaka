@@ -64,19 +64,23 @@
                             
                                 <div class="product-inner">
                                     <ul>
-                                        <li><a href="#"> Category: [[selectedProd.Category]]</a></li><a href="#">[[selectedProd.Brand]]</li>
-                                        <li><img class="thumbnail col-md-6" width="35%" ng-src="[[selectedProd.Image]]"></a></li>
-                                        <li><a href="#">Product material: [[selectedProd.ProductMaterial]]</a></li>
-                                        <li><a href="#"> Delivery date:[[selectedProd.Delivery.date | date]]</a></li>
+                                        <li>Category: [[selectedProd.Category]]</li>
+                                        <li>[[selectedProd.Brand]]</li>
+                                        <li><img class="thumbnail col-md-6" width="35%" ng-src="[[selectedProd.Image]]"></li>
+                                        <li>Product material: [[selectedProd.ProductMaterial]]</li>
+                                        <li>Delivery date: [[selectedProd.Delivery.date | date]]</li>
+                                        <li>[[selectedProd.Details]]</li>
                                         
-                                        <li><a href="#">[[selectedProd.Details]]</a></li>
-                                        <div class="product-carousel-price">
-                                            <ins>[[selectedProd.Price | currency]]</ins>
-                                            <p ng-class=checkVariation(selectedProd.Variation)> [[selectedProd.Variation]]</p>
-                                        </div>    
+                                        <li><div class="product-carousel-price">
+                                          <ins>[[selectedProd.Price | currency]]</ins>
+                                           <p ng-class=checkVariation(selectedProd.Variation)> [[selectedProd.Variation]]</p>
+                                        </div>
+                                        </li>    
                                     </ul>
                                             
-                                            <a href="" class="add-to-cart-link btn" ng-click=""><h2><i class="fa fa-shopping-cart"></i> Add to cart</h2></a>
+
+                                            <a href="" class="add-to-cart-link btn" ng-click="cartAdd(selectedProd.id)">
+                                            <h2><i class="fa fa-shopping-cart"></i> Add to cart</h2></a>
                                             
                                 </div>
                             
