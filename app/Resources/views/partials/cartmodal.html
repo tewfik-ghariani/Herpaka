@@ -1,26 +1,39 @@
 <div class="modal-header">
-                                    <h3 class="modal-title" id="modal-title">Add products to your cart!</h3>
+                                   <a href=""> <h3  ng-click="switchTo('/show')" class="modal-title" id="modal-title">Add other products to your cart!</h3> </a>
                                 </div>
                                 <div class="modal-body" id="modal-body">
-                                    <form>
+                             <!--       <form>
                                         <div class="form-group">
                                             <label for="nb">How many products did you order?</label>
                                             <input type="number" class="form-control" id="nb">
                                         </div>
-                                    </form>
-                                      <div class="col-md-12">
-                        <ul ng-repeat="product in ctrl.panier">
-                           <li><a href="#">[[product.ProductName]]</a></li>
-                            <li><a href="#">[[product.Category]]</a>
-                                   <div class="product-carousel-price">
-                            <ins>[[product.Price | currency]]</ins>
-                                <p ng-class=checkVariation(product.Variation)> [[product.Variation]]</p>
-                            </div>
+                                    </form> -->
+                                    
+                                                     <ul ng-repeat="product in ctrl.panier">
+                                                       <div class="row  well lead">
+                                                         <li >
+                                                             <div class="col-md-8">
+                                                                 <a href="#" ng-click="switchTo('show/[[product.id]]')">[[product.ProductName]]</a>
+                                                                 <b>[[product.Category]]</b>
+                                                              </div>   
 
-                        </ul></div>
-                                    Selected: <b>[[ ctrl.selected.item ]]</b>
+
+                                                            <div class="product-carousel-price col-md-3">
+                                                                     <ins>[[product.Price | currency]]</ins>
+                                                                      <p ng-class=checkVariation(product.Variation)> [[product.Variation]]</p>
+                                                            </div>
+
+                                                  
+                                                                <a href="" ng-click="ctrl.removeProduct(product.id)" type="button" class="btn btn-warning pull-right"> - </a>
+                                                           
+
+                                                        </li>
+                                                       </div>
+                                                     </ul>
+
+                                 
                                 </div>
                                 <div class="modal-footer">
-                                    <button class="btn btn-success" type="button" ng-click="ctrl.ok()">OK</button>
+                                    <button class="btn btn-success" type="button" ng-click="ctrl.ok()"> Pay Now!</button>
                                     <button class="btn btn-danger" type="button" ng-click="ctrl.cancel()">Cancel</button>
                                 </div>

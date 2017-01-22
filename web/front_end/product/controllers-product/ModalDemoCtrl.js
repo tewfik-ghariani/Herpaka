@@ -1,25 +1,18 @@
 var app = angular.module('app');
 
-app.controller('ModalDemoCtrl', [ 'cacheService', '$uibModal','$scope',
-  function (cacheService, $uibModal,$scope) {
+app.controller('ModalDemoCtrl', [  '$uibModal','$scope',
+  function ( $uibModal,$scope) {
   	
   	var ctrl = this;
   	
 
 
-  //  ctrl.panier = cacheService.getCart().then(function(value) {
-    //  ctrl.panier = value;
-      //console.log('hourray'+ctrl.panier);
 
-    //});
- 
-    console.log(ctrl.panier);
-                console.log('kk');
 
     //open modal
 
     ctrl.open = function(id) {
-     
+
       var selectedProduct = {
         'id': id
       };
@@ -35,7 +28,6 @@ app.controller('ModalDemoCtrl', [ 'cacheService', '$uibModal','$scope',
           }*/
 
           panier: function () {
-
           return ctrl.panier;
           }
         }

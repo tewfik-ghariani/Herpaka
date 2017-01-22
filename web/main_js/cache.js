@@ -27,21 +27,16 @@ app.service('cacheService', ['CacheFactory','providerFactory', '$q', function (C
       response = response.data;
        if (response.success){
        defer.resolve(response.data);
-        productCache.put('show', defer.promise);
-                          }
+        productCache.put('show', defer.promise); }
              });
   }
   });
-
     providerFactory.fetchProducts().then(function(response){
-   
       response = response.data;
        if (response.success){
-       defer.resolve(response.data);
-                          }
+       defer.resolve(response.data); }
              });
   }
-
   else {
     defer.resolve(productCache.get('show'));
   }
@@ -56,30 +51,40 @@ var cartCache = CacheFactory.get('cartCache');
 
 
  if (!cartCache) {
-  cartCache = CacheFactory.createCache('cartCache');
-}
+  cartCache = CacheFactory.createCache('cartCache');}
+
 
 
 self.getCart = function () {
-return cartCache.get('cart');
 
-};
+var toBuy = [];
+
+	for (i=0; i<cartCache.info().size; i++){
+
+		toBuy.push(cartCache.get(i));
+	}
+
+return toBuy;       
+ };
+
+
 
 
 self.addToCart = function (id) {
 
 self.allProducts().then(function(value) {
-
-var detailsProd = value[id];
-
-cartCache.put('cart', detailsProd);
-console.log(cartCache.get('cart'));
+cartCache.put(id, value[id]);
 });
-
 };
 
 
+self.removeFromCart = function(id) {
 
+cartCache.remove(id);
+
+return self.getCart();
+
+}
 
 
 
@@ -87,10 +92,7 @@ console.log(cartCache.get('cart'));
  var products = productCache.get('show');
 
  self.allProducts = function() 
- 	 {
-        
-        return products;
-      };
+ 	 { return products;   };
 
 
 

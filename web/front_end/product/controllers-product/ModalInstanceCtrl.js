@@ -1,25 +1,23 @@
 var app = angular.module('app');
 
-app.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance','panier', 
-  function ($scope, $uibModalInstance, panier) {
-
-
-
-
-
+app.controller('ModalInstanceCtrl', ['$rootScope', 'cacheService', '$uibModalInstance', 
+  function ($rootScope, cacheService, $uibModalInstance) {
 
 
   	var ctrl = this;
 
+    
+   ctrl.panier = cacheService.getCart();
 
-ctrl.panier = panier;
-console.log("hereeee",ctrl.panier);
+ctrl.removeProduct = function(id) {
+  ctrl.panier = cacheService.removeFromCart(id);
+};
 
   
 
-  ctrl.items = ['item1', 'item2', 'item3'];
   	ctrl.ok = function () {
-    $uibModalInstance.close(ctrl.selected.item);
+    $uibModalInstance.close();
+    $rootScope.switchTo('/pay');
   };
 
   ctrl.cancel = function () {
