@@ -29,18 +29,6 @@ app.config(['$routeProvider',
             templateUrl: "checkout.html",
             controller: 'checkoutCtrl'
         }).
-        when('/login', {
-            templateUrl: "login.html",
-            controller: 'loginCtrl'
-        }).
-        when('/register', {
-            templateUrl: "register.html",
-            controller: 'registerCtrl'
-        }).
-        when('/:userId/update', {
-            templateUrl: "update.html",
-            controller: 'updateCtrl'
-        }).
         otherwise({
             redirectTo: '/home'
         });

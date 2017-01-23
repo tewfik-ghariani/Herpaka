@@ -14,11 +14,12 @@
                     <ul class="nav navbar-nav navbar-right">                    
                     
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                {# {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} | #}
                 <li><a href="{{ path('fos_user_security_logout') }}" 
                         ng-click="switchTo('/home')"> Logout </a></li>
                 <li class="dropdown" id="profile-dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Profile
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-user"> {{ app.user.Username }} </i>
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu" id="dropdown-elt">
                       <li><a href="/profile/edit">Edit profile</a></li>
