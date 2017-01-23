@@ -13,7 +13,7 @@
             <div class="zigzag-bottom"></div>
             <div class="container">
                 <div class="row">
-                    <div ng-repeat="product in products | filter:lookingFor">
+                    <div ng-repeat="product in products.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter:lookingFor">
                     <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product well lead">
                         <div class="single-shop-product" >
@@ -21,7 +21,7 @@
                                 <img class="thumbnail" ng-src="[[product.Image]]">
                             </div>
                             <div style="min-height: 85px;">
-                                <h3>[[product.ProductName]]</h3>
+                                <h4>[[product.ProductName]]</h4>
                             </div> 
                             <div class="product-carousel-price">
                                 <ins>[[product.Price | currency]]</ins>
@@ -32,15 +32,33 @@
  
                                 <a class="add_to_cart_button" href="" ng-click="switchTo('/show/[[product.id]]')">View details</a>
                             </div>
-                            <div class="product-option-shop">
-                                <a class="add_to_cart_button" href="" ng-click="cartAdd(product)">Add to cart</a>
+                             <div class="product-option-shop">
+
+                                <a ng-hide="adding[$index]" class="add_to_cart_button" href="" ng-click="switchOn($index)">Add to cart</a>
+
+                                <div class="input-group" ng-show="adding[$index]">
+                                   <input type="number"  class="form-control" min="1" plcaeholder="How Many?" ng-model="quantity"/>
+                                   <span class="input-group-btn">
+                                   <a  class="btn btn-info" href="" type="button" ng-click="switchOff(product,quantity,$index)"> Confirm!</a>
+                                    </span>
+
+                                </div>
+
+
+
                             </div>
+
 
                         </div>
                     </div>
                     </div>
                     </div>
-                </div>
+                    <!-- NA7NA HADH A LI ZEDNAH -->
+                 
+
+                   <ul uib-pagination total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" rotate="false" class="pagination-sm" max-size="maxSize" items-per-page="itemsPerPage"></ul>
+  
+       </div>
             </div>
         </div>
     </div>config

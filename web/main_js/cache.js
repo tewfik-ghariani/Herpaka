@@ -46,16 +46,13 @@ app.service('cacheService', ['CacheFactory','providerFactory', '$q','$timeout', 
 
 
 // cache for panier!!
-
 var cartCache = CacheFactory.get('cartCache');
-
 
  if (!cartCache) {
   cartCache = CacheFactory.createCache('cartCache', {
 storageMode: "localStorage"
 
   });}
-
 
 
 self.getCart = function () {
@@ -73,20 +70,28 @@ return toBuy;
 
 
 
-self.addToCart = function (prod) {
-console.log('prod     ______________ '+ prod);
-cartCache.put(prod.id, prod);
+self.addToCart = function (prod, qte) {
+//ToDo Use ngFlash to say Added!
 
+cartCache.put(prod.id, {
+      prod : prod,
+      qte : qte
+});
 };
 
 
 self.removeFromCart = function(id) {
-
 cartCache.remove(id);
-
 return self.getCart();
+};
 
-}
+
+self.reset = function() {
+cartCache.removeAll();
+return self.getCart();
+};
+
+
 
 
 

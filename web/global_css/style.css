@@ -154,8 +154,8 @@ z-index: 999;}
 #profile-dropdown li a{
   background: #1abc9c !important;
 }
-#dropdown-elt a:hover {
-  background-color: #000 !important;
+#dropdown-elt a:hover{
+  background-color: #222 !important;
 }
 
 .slider-area {clear: both}
