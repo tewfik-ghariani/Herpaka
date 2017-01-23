@@ -13,7 +13,9 @@
             <div class="zigzag-bottom"></div>
             <div class="container">
                 <div class="row">
-                    <div ng-repeat="product in products.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter:lookingFor">
+          
+                    <div ng-repeat="product in products.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+               
                     <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product well lead">
                         <div class="single-shop-product" >
@@ -53,12 +55,13 @@
                     </div>
                     </div>
                     </div>
-                    <!-- NA7NA HADH A LI ZEDNAH -->
+                    
                  
-
-                   <ul uib-pagination total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" rotate="false" class="pagination-sm" max-size="maxSize" items-per-page="itemsPerPage"></ul>
+                 
+                    <div class="col-md-12">
+                   <ul uib-pagination total-items="totalItems" max-size="maxSize" ng-model="currentPage" ng-change="pageChanged()" rotate="false" class="pagination-md" max-size="maxSize" items-per-page="itemsPerPage"></ul></div>
   
-       </div>
+            </div>
             </div>
         </div>
-    </div>config
+  

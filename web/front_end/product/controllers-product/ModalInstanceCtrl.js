@@ -1,7 +1,7 @@
 var app = angular.module('app');
 
-app.controller('ModalInstanceCtrl', [ 'cacheService', '$uibModalInstance', 
-  function (cacheService, $uibModalInstance) {
+app.controller('ModalInstanceCtrl', [ 'cacheService', '$uibModalInstance', '$rootScope', 
+  function (cacheService, $uibModalInstance, $rootScope) {
 
 
   	var ctrl = this;
@@ -23,7 +23,7 @@ ctrl.panier = cacheService.reset();
 
   	ctrl.ok = function () {
     $uibModalInstance.close();
-    $scope.switchTo('/pay');
+    $rootScope.switchTo('/pay');
   };
 
 

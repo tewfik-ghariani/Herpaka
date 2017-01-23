@@ -1,20 +1,35 @@
 var app = angular.module('app');
 
-app.controller('listproductCtrl', ['$scope', 'cacheService',
-  function ($scope, cacheService) {
+app.controller('listproductCtrl', ['$scope', 'cacheService','$filter', '$rootScope',
+  function ($scope, cacheService,$filter,$rootScope) {
 
 	$scope.adding = [];
 
-  $scope.products = cacheService.allProducts().then(function(value) {
-
-        $scope.products =  value;
+  $scope.allproducts = cacheService.allProducts().then(function(value) {
+        
+        
+        $scope.allproducts=value;
+        if (Array.isArray($scope.allproducts)){
+        $scope.products = $filter('filter')($scope.allproducts, $scope.lookingFor);
+            $scope.totalItems = $scope.products.length;}
         $scope.viewby = 20;
-        $scope.totalItems = value.length;
-        $scope.currentPage = 4;
+        $scope.currentPage = 1;
         $scope.itemsPerPage = $scope.viewby;
         $scope.maxSize = 5; //Number of pager buttons to show
-
+        
       });
+
+        $rootScope.$watch('lookingFor', function() {
+        
+          //check if array to avoid using these methods/attributs on undefined 
+        if (Array.isArray($scope.allproducts)){
+        $scope.products = $filter('filter')($scope.allproducts, $rootScope.lookingFor);
+        $scope.totalItems = $scope.products.length;}
+
+        }); 
+  
+        
+
 
   $scope.switchOn = function (index) {
   $scope.adding[index] = true;  };
@@ -37,5 +52,5 @@ app.controller('listproductCtrl', ['$scope', 'cacheService',
 $scope.setItemsPerPage = function(num) {
   $scope.itemsPerPage = num;
   $scope.currentPage = 1; //reset to first paghe
-}
+};
   }]);
