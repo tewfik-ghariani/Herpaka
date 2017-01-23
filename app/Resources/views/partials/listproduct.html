@@ -32,9 +32,22 @@
  
                                 <a class="add_to_cart_button" href="" ng-click="switchTo('/show/[[product.id]]')">View details</a>
                             </div>
-                            <div class="product-option-shop">
-                                <a class="add_to_cart_button" href="" ng-click="cartAdd(product)">Add to cart</a>
+                             <div class="product-option-shop">
+
+                                <a ng-hide="adding[$index]" class="add_to_cart_button" href="" ng-click="switchOn($index)">Add to cart</a>
+
+                                <div class="input-group" ng-show="adding[$index]">
+                                   <input type="number"  class="form-control" min="1" plcaeholder="How Many?" ng-model="quantity"/>
+                                   <span class="input-group-btn">
+                                   <a  class="btn btn-info" href="" type="button" ng-click="switchOff(product,quantity,$index)"> Confirm!</a>
+                                    </span>
+
+                                </div>
+
+
+
                             </div>
+
 
                         </div>
                     </div>
