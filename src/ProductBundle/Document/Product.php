@@ -231,7 +231,14 @@ class Product
     * @return array
     */
     public function showProduct()
-    {
+    {   
+
+    $variation =$this->newPrice - $this->oldPrice;
+
+    if ($variation>0){
+        $variation = '+'.$variation;
+    }
+
         $product = array(
                          "id"=>$this->sid,
                          "ProductName"=>$this->productName,
@@ -242,7 +249,7 @@ class Product
                          "Delivery"=>$this->delivery,
                          "Details"=>$this->details,
                          "Price"=>$this->newPrice,
-                         "Variation"=>$this->newPrice - $this->oldPrice
+                         "Variation"=>$variation
                          );
         return $product;
 

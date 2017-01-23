@@ -76,11 +76,22 @@
                                            <p ng-class=checkVariation(selectedProd.Variation)> [[selectedProd.Variation]]</p>
                                         </div>
                                         </li>    
-                                    </ul>
-                                            
-
-                                            <a href="" class="add-to-cart-link btn" ng-click="cartAdd(selectedProd)">
+                                   
+                                          <li>  
+                                             <div ng-hide="adding">
+                                            <a href="" class="add-to-cart-link btn" ng-click="switchOn()">
                                             <h2><i class="fa fa-shopping-cart"></i> Add to cart</h2></a>
+                                                </div>
+
+
+                                        <div class="input-group"  ng-show="adding">
+                                       <input type="number" class="form-control" min="1" plcaeholder="How Many?" ng-model="quantity"/>
+                                       <span class=" input-group-btn">
+                                        <a class="btn btn-info"  href="" type="button" ng-click="switchOff(selectedProd,quantity)"> Confirm!</a>
+                                        </span>
+                                        </div>
+                                        </li>
+                                         </ul>
                                             
                                 </div>
                             
