@@ -18,9 +18,9 @@ app.directive('autocomplete', function() {
     controller: ['$scope', function($scope){
       // the index of the suggestions that's currently selected
       $scope.selectedIndex = -1;
-
+      $scope.suggestions = [];
       $scope.initLock = true;
-
+      
       // set new index
       $scope.setIndex = function(i){
         $scope.selectedIndex = parseInt(i);
@@ -83,7 +83,7 @@ app.directive('autocomplete', function() {
 
       // selecting a suggestion with RIGHT ARROW or ENTER
       $scope.select = function(suggestion){
-        if(suggestion){
+        if(suggestion) {
           $scope.searchParam = suggestion;
           $scope.searchFilter = suggestion;
           if($scope.onSelect)
