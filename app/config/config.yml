@@ -79,11 +79,20 @@ fos_user:
         mailer: fos_user.mailer.twig_swift
     from_email:
         address:        herpakaap@gmail.com
-        sender_name:    Registration confirmation
+        sender_name:    Herpeka App Team
     registration:
         confirmation:
+            from_email:
+                address:        herpakaap@gmail.com
+                sender_name:    Confirmation Registration
             enabled: true
             template:   FOSUserBundle:Registration:email.txt.twig
+    resetting:
+        email:
+            from_email:
+                address:        herpakaap@gmail.com
+                sender_name:    Password Resetting
+            template:   FOSUserBundle:Resetting:email.txt.twig
     
 # Swiftmailer Configuration
 swiftmailer:
