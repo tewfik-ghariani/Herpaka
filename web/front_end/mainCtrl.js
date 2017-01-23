@@ -1,9 +1,14 @@
-var userControllers = angular.module('app');
+var app= angular.module('app');
 
-userControllers.controller('mainCtrl', ['$scope', '$routeParams',
+app.controller('mainCtrl', ['$scope', 'cacheService',
+  function ($scope, cacheService) {
 
-  function($scope, $routeParams) {
 
-    $scope.userId = $routeParams.userId;
+  $scope.products = cacheService.allProducts().then(function(value) {
+        $scope.products =  value;
+        
+      });
+
+  		 $scope.numberShownProducts = 12;
 
   }]);

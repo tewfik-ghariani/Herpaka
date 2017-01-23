@@ -198,9 +198,9 @@ z-index: 9;
   top: 0;
   width: 100%;
 }
-.slide-one {background-image: url(img/slide-1.jpg)}
-.slide-two {background-image: url(img/slide-2.jpg)}
-.slide-three {background-image: url(img/slide-3.jpg)}
+.slide-one {background-image: url(shop.jpg)}
+.slide-two {background-image: url(trust.jpg)}
+.slide-three {background-image: url(familyshop.jpg)}
 .slide-text {color: #fff;font-size: 18px;font-weight: 200}
 .slide-text h2 {
   font-size: 45px;font-weight: 200
@@ -269,9 +269,14 @@ z-index: 9;
   text-align: center;
 }
 
+.product-image{
+ min-height: 280px !important;
+
+}
 
 .product-f-image {
     position: relative;
+    min-height: 280px ;
 }
 .product-hover {
     height: 100%;
@@ -328,6 +333,14 @@ z-index: 9;
 }
 
 
+.carousel.carousel-fade .item { transition: opacity 1s ease-in-out }
+.carousel.carousel-fade .active.left,
+.carousel.carousel-fade .active.right {
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
 .single-product h2 a {
     color: #222;
 }
@@ -337,7 +350,8 @@ z-index: 9;
 }
 
 .single-product {
-  overflow: hidden;
+
+  
 }
 .single-product:hover {}
 .single-product:hover .product-hover a.add-to-cart-link {top: 32%;}
@@ -522,6 +536,9 @@ a:hover, a:focus {color: #17a78b}
     width: 100%;
     z-index: 99;
 }
+
+
+
 ol.slide-indicators {
 left: inherit;
 list-style: outside none none;
@@ -1018,3 +1035,20 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   background-color: #1abc9c !important;
 }
 
+/*back button in singleproduct.html*/
+.my-back-button {
+content: url('returnbutton.png');
+width: 48px;
+}
+
+
+
+.redclass {
+    color: red !important;
+    overflow: hidden !important;
+}
+
+.greenclass {
+    color: green !important;
+    overflow: hidden !important;
+}
