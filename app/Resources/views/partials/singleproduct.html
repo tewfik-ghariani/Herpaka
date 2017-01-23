@@ -44,17 +44,7 @@
                         </ul>
                     </div-->
 
-                 <div class="product-option-shop2 col-md-10 col-md-offset-1">
-                
-                      <ion-nav-back-button class="add_to_cart_button" href="" ng-click="switchTo('/show')">
-                          
-                          <a class="button button-icon my-back-button" href="">
-                                return to shop page
-                           </a>
-                          
-                      </ion-nav-back-button>
-                
-                </div>
+
 
                 <div class="col-md-10 col-md-offset-1">
                     <div class="product-content-right well lead">
@@ -83,7 +73,6 @@
                                             <h2><i class="fa fa-shopping-cart"></i> Add to cart</h2></a>
                                                 </div>
 
-
                                         <div class="input-group"  ng-show="adding">
                                        <input type="number" class="form-control" min="1" plcaeholder="How Many?" ng-model="quantity"/>
                                        <span class=" input-group-btn">
@@ -92,7 +81,13 @@
                                         </div>
                                         </li>
                                          </ul>
-                                            
+                                            <button type="button" class="btn btn-default btn-lg" href="" ng-click="switchTo('/show')">
+                                            <span class="glyphicon glyphicon-th" aria-hidden="true"> </span> Go to shop page
+                                            </button>
+                                                     
+                                            <button type="button" class="btn btn-default btn-lg" href="" ng-click="switchTo('/home')">
+                                            <span class="glyphicon glyphicon-home" aria-hidden="true"> </span> Return to home page
+                                            </button>
                                 </div>
                             
                         </div>    

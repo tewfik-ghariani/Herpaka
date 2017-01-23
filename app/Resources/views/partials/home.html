@@ -83,3 +83,77 @@
 
         </div>        
     </div> <!-- End slider area -->
+
+<!--promo area-->
+     <div class="promo-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo">
+                        <i class="fa fa-refresh"></i>
+                        <p>30 Days return</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo">
+                        <i class="fa fa-truck"></i>
+                        <p>Free shipping</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo">
+                        <i class="fa fa-lock"></i>
+                        <p>Secure payments</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo">
+                        <i class="fa fa-gift"></i>
+                        <p>New products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- End promo area -->
+
+ 
+    <div class="maincontent-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                
+                    <div class="latest-product">
+                        <h2 class="section-title">Latest Products</h2>
+                        <div class="product-carousel">
+                            <div ng-repeat= "product in products | limitTo:numberShownProducts" >
+                            <div class="single-product">
+                            
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product-f-image">
+                                    <img ng-src="[[product.Image]]"  alt="" class="product-image">
+                                    <div class="product-hover">
+                                        <a class="view-details-link" href="" ng-click="switchTo('/show/[[product.id]]')"><i class="fa fa-link"></i> See details</a>
+                                        <a class="add-to-cart-link" href="" ng-click="cartAdd(product)"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                    </div>
+                                </div>
+                                
+                                <h2><a>[[product.ProductName]]</a></h2>
+                                
+                                <div class="product-carousel-price">
+                                <ins>[[product.Price | currency]]</ins>
+                                <p ng-class=checkVariation(product.Variation)> [[product.Variation]]</p>
+                                </div>
+                            </div>
+                            </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- End main content area -->
+

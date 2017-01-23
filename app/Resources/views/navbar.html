@@ -52,14 +52,14 @@
                                 <img src="{{ asset('assets/images/Shopping-Cart.png')}}" alt="Shopping-Cart" height="42" width="42">
                             </a>
                         </div>
-                        <form class="navbar-form" role="search">
-                            <div class="input-group">
-                                <div ng-controller="MyCtrl" style="color: black !important">
+                        <form  class="navbar-form" role="search">
+                            <div ng-controller="MyCtrl"  class="input-group">
+                                <div style="color: black !important">
                                     <autocomplete ng-model="result" attr-placeholder="type to search products..." click-activation="true" data="products" on-type="doSomething" on-select="doSomethingElse">
                                     </autocomplete>
                                 </div>
                                 <div class="input-group-btn">
-                                    <button class="btn btn-danger" type="button" ng-click="test()">
+                                    <button class="btn btn-danger" type="button" ng-click="redirect(result)">
                                         <span class="glyphicon glyphicon-search"></span>
                                     </button>
                                 </div>
