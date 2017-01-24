@@ -27,6 +27,7 @@
     "angular-cache": "^4.6.0",
     "angular-bootstrap": "^2.4.0",
     "angular-animate": "1.4.8",
-    "angular-touch": "1.4.8"
+    "angular-touch": "1.4.8",
+    "angular-post-fix": "^0.1.0"
   }
 }
