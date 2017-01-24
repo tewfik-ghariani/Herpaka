@@ -14,7 +14,6 @@
                     <ul class="nav navbar-nav navbar-right">                    
                     
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {# {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} | #}
                 <li><a href="{{ path('fos_user_security_logout') }}" 
                         ng-click="switchTo('/home')"> Logout </a></li>
                 <li class="dropdown" id="profile-dropdown">
@@ -41,7 +40,10 @@
         <ul class="nav navbar-nav">
                         <li><a href="" ng-click="switchTo('/home')">Home</a></li>
                         <li><a href="" ng-click="switchTo('/show')">Shop page</a></li>
-                        <li><a href="" ng-click="switchTo('/categories')">Categories</a></li>
+                        <!--li><a href="" ng-click="switchTo('/categories')">Categories</a></li-->
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <li><a href="" ng-click="switchTo('/checkout')">Checkout</a></li>
+                        {% endif %}
                     </ul>
                     <div class="col-sm-5 col-md-5 pull-right">
                         <div ng-controller="ModalDemoCtrl as ctrl" class="modal-demo">
