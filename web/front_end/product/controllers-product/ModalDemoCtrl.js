@@ -4,12 +4,6 @@ app.controller('ModalDemoCtrl', [  '$uibModal','$scope',
   function ( $uibModal,$scope) {
   	
   	var ctrl = this;
-  	
-
-
-
-
-    //open modal
 
     ctrl.open = function(id) {
 
@@ -32,8 +26,6 @@ app.controller('ModalDemoCtrl', [  '$uibModal','$scope',
           }
         }
       });
-   
-   
 
       modalInstance.result.then(function () {
         return ctrl.panier;

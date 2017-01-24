@@ -1,42 +1,33 @@
 <div class="modal-header">
-                                   <a href=""> <h3  ng-click="switchTo('/show')" class="modal-title" id="modal-title">Add other products to your cart!</h3> </a>
-
-
-                                <a href="" ng-click="ctrl.empty()" type="button" class="btn btn-default"> Reset Cart! </a>
-                                </div>
-                                <div class="modal-body" id="modal-body">
-
-                                    
-                                                     <ul ng-repeat="product in ctrl.panier">
-                                                       <div class="row  well lead">
-                                                         <li>
-                                                         <div class="col-md-1">
-                                                                       <h4> [[product.qte]] </h4>
-                                                        </div>
-                                                             <div class="col-md-7">  
-                                                                 <a href="" ng-click="switchTo('/show/[[product.prod.id]]')">[[product.prod.ProductName]]</a>
-                                                                 <b>[[product.prod.Category]]</b>
-                                                              </div>   
-
-
-                                                            <div class="product-carousel-price col-md-3">
-                                                                     <ins>[[product.prod.Price | currency]]</ins>
-                                                                      <p ng-class=checkVariation(product.prod.Variation)> [[product.prod.Variation]]</p>
-                                                            </div>
-
-                                              
-
-                                                  
-                                                                <a href="" ng-click="ctrl.removeProduct(product.prod.id)" type="button" class="btn btn-danger pull-right"> <i class="glyphicon glyphicon-trash"></i> </a>
-                                                           
-
-                                                        </li>
-                                                       </div>
-                                                     </ul>
-
-                                 
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-success" type="button" ng-click="ctrl.ok()"> Pay Now!</button>
-                                    <button class="btn btn-warning" type="button" ng-click="ctrl.cancel()">Cancel</button>
-                                </div>
+    <a href="">
+        <h3 ng-click="switchTo('/show')" class="modal-title" id="modal-title">Add other products to your cart!</h3> </a>
+    <a href="" ng-click="ctrl.empty()" type="button" class="btn btn-default"> Reset Cart! </a>
+</div>
+<div class="modal-body" id="modal-body">
+    <ul ng-repeat="product in ctrl.panier">
+        <div class="row  well lead">
+            <li>
+                <div class="col-md-1">
+                    <h4> [[product.qte]] </h4>
+                </div>
+                <div class="col-md-7">
+                    <a href="" ng-click="switchTo('/show/[[product.prod.id]]')">[[product.prod.ProductName]]</a>
+                    <b>[[product.prod.Category]]</b>
+                </div>
+                <div class="product-carousel-price col-md-3">
+                    <ins>[[product.prod.Price | currency]]</ins>
+                    <p ng-class=checkVariation(product.prod.Variation)> [[product.prod.Variation]]</p>
+                </div>
+                <a href="" ng-click="ctrl.removeProduct(product.prod.id)" type="button" class="btn btn-danger pull-right"> <i class="glyphicon glyphicon-trash"></i> </a>
+            </li>
+        </div>
+    </ul>
+</div>
+<div class="modal-footer">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    <button class="btn btn-success" type="button" ng-click="ctrl.ok()"> Pay Now!</button>
+    {% else %}
+    <a class="btn btn-success" href="/login"> Pay Now!</a>
+    {% endif %}
+    <button class="btn btn-warning" type="button" ng-click="ctrl.cancel()">Cancel</button>
+</div>

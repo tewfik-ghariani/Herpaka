@@ -1,9 +1,11 @@
-var userControllers = angular.module('userControllers', []);
+var app = angular.module('app');
 
-userControllers.controller('checkoutCtrl', ['$scope', '$routeParams',
+app.controller('checkoutCtrl', ['$scope', 'cacheService', function($scope, cacheService) {
 
-  function($scope, $routeParams) {
-
-    $scope.userId = $routeParams.userId;
-
-  }]);
+    var pan = cacheService.getCart();
+    console.log('paniiiiiiiiiiiiiiiiier', pan)
+    var infos = $scope.form;
+    $scope.pay = function() {
+        
+    }
+}]);

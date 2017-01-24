@@ -13,9 +13,13 @@ app.config(['$routeProvider',
             templateUrl: "listproduct.html",
             controller: 'listproductCtrl'
         }).
-         when('/categories', {
+        when('/categories', {
             templateUrl: "categories.html",
             controller: 'categoriesCtrl'
+        }).
+        when('/checkout', {
+            templateUrl: "checkout.html",
+            controller: 'checkoutCtrl'
         }).
         when('/show/:productId', {
             templateUrl: "singleproduct.html",
@@ -24,10 +28,6 @@ app.config(['$routeProvider',
         when('/:userId/cart', {
             templateUrl: "cart.html",
             controller: 'cartCtrl'
-        }).
-        when('/:userId/checkout', {
-            templateUrl: "checkout.html",
-            controller: 'checkoutCtrl'
         }).
         otherwise({
             redirectTo: '/home'

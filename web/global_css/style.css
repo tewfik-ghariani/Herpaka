@@ -1030,7 +1030,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   color: #1abc9c;
 }
 
-/*Added */
+/*Dropdown element */
 #profile-dropdown ul.navbar-nav li:hover a{
   background-color: #1abc9c !important;
 }
@@ -1040,8 +1040,6 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 content: url('returnbutton.png');
 width: 48px;
 }
-
-
 
 .redclass {
     color: red !important;
