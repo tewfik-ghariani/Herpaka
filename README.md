@@ -44,6 +44,8 @@ sudo apt-get install -y mongodb-org
 Follow these instructions to use our prototype and contribute in the development process of our Shop:
 composer update
 ```
+php composer.phar update
+
 bower install
 
 app/console doctrine:mongodb:schema:create --index
@@ -56,7 +58,7 @@ You need to add this line while adjusting the path to your project file
 */5 * * * * php {PATH_To_YOur_File}/app/console crontasks:run
 
 ___________________________________________________________________________________________________
-If you follow these instructions properly, you may find the products updated automatically at /list
+If you follow these instructions properly, you may find the products updated automatically
 Enjoy using our online shopping website!
 
 
