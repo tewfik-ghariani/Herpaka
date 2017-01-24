@@ -434,11 +434,7 @@
                 "orm",
                 "persistence"
             ],
-<<<<<<< HEAD
-            "time": "2017-01-16T12:01:26+00:00"
-=======
             "time": "2017-01-16 12:01:26"
->>>>>>> 0d157f8126cad0a6c721ea335c639584b10c36bc
         },
         {
             "name": "doctrine/doctrine-cache-bundle",

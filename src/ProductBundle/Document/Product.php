@@ -15,6 +15,7 @@ class Product
 	protected $details;
 	protected $oldPrice;
     protected $newPrice;
+    protected $variation;
 
     /**
      * Get id
@@ -233,7 +234,7 @@ class Product
     public function showProduct()
     {   
 
-    $variation =$this->newPrice - $this->oldPrice;
+    $variation =$this->getVariation();
 
     if ($variation>0){
         $variation = '+'.$variation;
@@ -256,10 +257,6 @@ class Product
     }
 
 
-
-
-
-
     /**
      * Set sid
      *
@@ -280,5 +277,27 @@ class Product
     public function getSid()
     {
         return $this->sid;
+    }
+
+    /**
+     * Set variation
+     *
+     * @param float $variation
+     * @return self
+     */
+    public function setVariation($variation)
+    {
+        $this->variation = $variation;
+        return $this;
+    }
+
+    /**
+     * Get variation
+     *
+     * @return float $variation
+     */
+    public function getVariation()
+    {
+        return $this->variation;
     }
 }

@@ -1,14 +1,19 @@
 var app= angular.module('app');
 
-app.controller('mainCtrl', ['$scope', 'cacheService',
-  function ($scope, cacheService) {
+app.controller('mainCtrl', ['$scope', '$http',
+  function ($scope, $http) {
 
 
-  $scope.products = cacheService.allProducts().then(function(value) {
-        $scope.products =  value;
-        
-      });
+$scope.products = $http.get('/top').then (function(value) {
+		var resp = value.data;
 
-  		 $scope.numberShownProducts = 12;
+	if (resp.success) 
+	{
+		$scope.products = resp.data;
+	}
+});
+
+
+  		
 
   }]);
