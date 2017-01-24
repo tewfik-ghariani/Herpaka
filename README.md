@@ -44,7 +44,7 @@ sudo apt-get install -y mongodb-org
 Follow these instructions to use our prototype and contribute in the development process of our Shop:
 composer update
 ```
-composer update
+php composer.phar update
 
 bower install
 
