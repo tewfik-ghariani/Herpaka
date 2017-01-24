@@ -1050,3 +1050,8 @@ width: 48px;
     color: green !important;
     overflow: hidden !important;
 }
+
+.cat{
+  display: inline;
+  padding: 10px;
+}

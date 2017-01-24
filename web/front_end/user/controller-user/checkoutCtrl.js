@@ -4,12 +4,11 @@ app.controller('checkoutCtrl', ['$scope', 'cacheService', 'productFactory',
 	function($scope, cacheService, productFactory) {
 
     $scope.cart = cacheService.getCart();
-    var infos = $scope.form;
 
     var sum = function(tab) {
     	var sum=0;
     	for (var i=0; i<tab.length; i++){
-    		sum += tab[i].prod.Price;
+    		sum += (tab[i].prod.Price * tab[i].qte);
     	}
     	return sum;
     }
