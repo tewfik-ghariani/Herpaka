@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 
-<head>
+<head >
+    <link rel="icon" href="{{ asset('assets/images/shop-icon.png') }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,15 +69,13 @@
     <script src="{{ asset('front_end/user/controller-user/checkoutCtrl.js')}}"></script>
     <script src="{{ asset('front_end/user/controller-user/loginCtrl.js')}}"></script>
     <script src="{{ asset('front_end/user/controller-user/registerCtrl.js')}}"></script>
-    <script src="{{ asset('front_end/mainCtrl.js')}}"></script>
+    <script src="{{ asset('front_end/product/controllers-product/categoriesCtrl.js')}}"></script>
     
     <!-- views -->
     
     <!--templates-->
    
     <!--template for home page-->
-    <!--todo:this template should be hidden once the user is authenticated-->
-    <!--this template has no controller-->
     <script type="text/ng-template" id="home.html">
         {% include 'partials/home.html' %}
     </script>
@@ -93,7 +92,6 @@
 
     
     <!--template for categories-->
-    <!--this template has no controller-->
     <script type="text/ng-template" id="categories.html">
         {% include 'partials/categories.html' %}
     </script>
@@ -130,7 +128,7 @@
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-6 col-sm-6">
                     <div class="footer-about-us">
                         <h2><span>Herpaka app</span></h2>
                         <p>we're the best, we're awesome, we'll rock the ATS project. oh lalalalalalalalalalalalalalalalalalalalalalala</p>
@@ -143,31 +141,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">User Navigation </h2>
-                        <ul>
-                            <li><a href="">My account</a></li>
-                            <li><a href="">Order history</a></li>
-                            <li><a href="">Wishlist</a></li>
-                            <li><a href="">Vendor contact</a></li>
-                            <li><a href="">Front page</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">Categories</h2>
-                        <ul>
-                            <li><a href="">Mobile Phone</a></li>
-                            <li><a href="">Home accesseries</a></li>
-                            <li><a href="">LED TV</a></li>
-                            <li><a href="">Computer</a></li>
-                            <li><a href="">Gadets</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
+
+              
+                <div class="col-md-6 col-sm-6">
                     <div class="footer-newsletter">
                         <h2 class="footer-wid-title">Newsletter</h2>
                         <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>

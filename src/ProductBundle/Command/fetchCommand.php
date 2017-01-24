@@ -75,6 +75,7 @@
 		        $product->setDetails($jsons['details']);
 			    $product->setNewPrice($best_price);
 			    $product->setOldPrice($best_price);
+			    $product->setVariation(0);
 
 			    $dm->persist($product);	
 		        }	
@@ -88,6 +89,7 @@
 		     	   if ($existing_price != $best_price) {
 		       			 $existing_product->setOldPrice($existing_price);
 		       			 $existing_product->setNewPrice($best_price);
+		       			 $existing_product->setVariation($best_price - $existing_price);
 		       		 }
 		        $dm->persist($existing_product);	
 				}

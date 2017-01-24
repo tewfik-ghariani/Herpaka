@@ -10,3 +10,14 @@ product_order:
     path:     /order
     defaults: { _controller: ProductBundle:Product:order }
 
+product_top:
+    path:     /top
+    defaults: { _controller: ProductBundle:Product:discount }
+
+product_prodCat:
+    path:     /cat
+    defaults: { _controller: ProductBundle:Product:productsInCategory }
+
+product_category:
+    path:     /info
+    defaults: { _controller: ProductBundle:Product:category }
