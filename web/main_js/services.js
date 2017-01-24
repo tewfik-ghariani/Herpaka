@@ -27,9 +27,6 @@ app.factory('ProductRetriever', function($http, $q, $timeout){
   return ProductRetriever;
 });
 
-
-
-
 // service to fetch products from the database
 app.factory('providerFactory', ['$http', function($http) { 
 
@@ -42,7 +39,17 @@ app.factory('providerFactory', ['$http', function($http) {
             },
 
           }
-
-
 }]);
 
+app.factory('productFactory', ['$http', function($http) { 
+
+    return {
+            orderProducts : function () {
+              return $http({
+                method: 'POST',
+                url: "/order"
+              })
+            },
+
+          }
+}]);

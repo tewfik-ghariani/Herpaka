@@ -18,6 +18,7 @@
                 <div class="form-group">
                     <label class="control-label" for="expiry-month">Expiration Date</label>
                     <div class="row">
+                    <input type="hidden" id="pay_email" name="pay_email" value="{{ app.user.Email }}" />
                         <div class="col-md-6">
                             <select class="form-control" name="expiry-month" id="expiry-month">
                                 <option>Month</option>
@@ -59,8 +60,8 @@
                 <div class="form-group">
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active">
-                            <a href="#"><span class="badge pull-right">
-                            <span class="glyphicon glyphicon-usd"></span>4200</span> Final Payment</a>
+                            <a href><span class="badge pull-right">
+                            <span class="glyphicon glyphicon-usd"></span>[[total | number]]</span> Final Payment</a>
                         </li>
                     </ul>
                 </div>

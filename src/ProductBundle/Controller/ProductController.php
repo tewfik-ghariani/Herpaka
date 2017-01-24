@@ -30,7 +30,24 @@ class ProductController extends Controller
           	'success' => true,
           	'data' => $data
           	]);
+    }
 
+    public function orderAction()
+    {
+    	//get the logged in user's email
+    	$user = $this->container->get('security.context')->getToken()->getUser();
+		$email = $user->getEmail();
 
+        $message = \Swift_Message::newInstance()
+		    ->setSubject('Thank you for ordering via Herpaka App!')
+		    ->setFrom('herpakaapp@gmail.com')
+		    ->setTo($email)
+		    // ->setBody($this->renderView('ProductBundle:Resources:views:Default:index.html.twig', array('enquiry' => $enquiry)));
+			->setBody($this->renderView('@ProductBundle/Resources/views/Default/index.html.twig'));		 
+        $this->get('mailer')->send($message);
+
+        return new JsonResponse([
+          	'command' => $email
+          	]);
     }
 }
