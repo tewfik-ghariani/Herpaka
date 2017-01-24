@@ -164,6 +164,32 @@ class ProductController extends Controller
    	}
 
 
+   	    public function payAction() 
+   		 {
+
+				$request = $this->getRequest();
+				   
+				$mail = $request->request->get('email');
+				$cart = $request->request->get('cart');
+			   $CVV= $request->request->get('CVV');
+
+			   $message = \Swift_Message::newInstance()
+			   			->setSubject('Success Payment!')
+			   			->setFrom('herpakaap@gmail.com')
+			   			->setTo($mail)
+			   			->setBody(
+			   				$this->renderView('@FOS/views/email/pay.twig', array ('email' => $mail, 
+			   																		'cart' => $cart,
+			   																		'CVV' => $CVV)
+			   				),
+			   				'text/html'
+			   				);
+
+    	    return new Response();
+  
+   	}
+
+
 
 
 }

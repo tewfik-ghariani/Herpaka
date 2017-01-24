@@ -25,10 +25,6 @@ app.config(['$routeProvider',
             templateUrl: "singleproduct.html",
             controller: 'singleproductCtrl'
         }).
-        when('/:userId/cart', {
-            templateUrl: "cart.html",
-            controller: 'cartCtrl'
-        }).
         otherwise({
             redirectTo: '/home'
         });

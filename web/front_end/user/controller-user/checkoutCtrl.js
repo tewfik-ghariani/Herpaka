@@ -16,11 +16,20 @@ app.controller('checkoutCtrl', ['$scope', 'cacheService', 'productFactory',
 
     $scope.total = sum($scope.cart);
 
-    var email = document.getElementsByName('pay_email')[0].value;
+    $scope.email = document.getElementsByName('pay_email')[0].value;
+
+    
+    $scope.toSend = {
+        "email" : $scope.email,
+        "CVV": $scope.CVV,
+        "cart": $scope.cart
+    };
 
     $scope.pay = function() {
-        productFactory.orderProducts().then(function(response){
+        productFactory.orderProducts($scope.toSend).then(function(response){
 			response = response.data;
+            $scope.switchTo('/home');
+            cacheService.reset();
 		})
     }
 

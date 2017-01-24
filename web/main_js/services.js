@@ -44,10 +44,11 @@ app.factory('providerFactory', ['$http', function($http) {
 app.factory('productFactory', ['$http', function($http) { 
 
     return {
-            orderProducts : function () {
+            orderProducts : function (data) {
               return $http({
                 method: 'POST',
-                url: "/order"
+                url: "/order",
+                data: data
               })
             },
 

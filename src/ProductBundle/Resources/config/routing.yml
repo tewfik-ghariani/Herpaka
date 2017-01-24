@@ -21,3 +21,5 @@ product_prodCat:
 product_category:
     path:     /info
     defaults: { _controller: ProductBundle:Product:category }
+
+

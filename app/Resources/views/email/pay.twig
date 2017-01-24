@@ -1,0 +1,22 @@
+{% block subject %} Payment Achieved!{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+Hello {{ mail }} !
+
+You just purchased products with your credit cart {{CVV}}
+
+This was your cart : 
+
+{{cart}}
+
+
+
+Greetings,
+the Herpaka App team
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+
+{% endblock %}
