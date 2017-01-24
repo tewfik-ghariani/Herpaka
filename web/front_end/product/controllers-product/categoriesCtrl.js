@@ -24,8 +24,7 @@ $scope.update = function(chosenCategory) {
 $scope.products = $http({
     url: '/cat',
     method: "POST",
-    headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
-    params: { lookingFor:chosenCategory}
+    data: { lookingFor:chosenCategory}
   })
 .then(function(value) {
     var resp = value.data;

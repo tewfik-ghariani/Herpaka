@@ -79,7 +79,7 @@ fos_user:
         mailer: fos_user.mailer.twig_swift
     from_email:
         address:        herpakaap@gmail.com
-        sender_name:    Herpeka App Team
+        sender_name:    Herpaka App Team
     registration:
         confirmation:
             from_email:

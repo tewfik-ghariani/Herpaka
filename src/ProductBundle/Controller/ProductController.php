@@ -99,7 +99,7 @@ class ProductController extends Controller
 				{ return new Response('<h1> Choose a Category!</h1>');};
 
 
-			$asked = $request->query->get('lookingFor');
+			$asked = $request->request->get('lookingFor');
 
 
     		$dm = $this->get('doctrine_mongodb')->getManager();
